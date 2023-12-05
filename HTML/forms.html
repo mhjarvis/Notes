@@ -6,9 +6,64 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Some Form</h1>
+    <h1>This form searches Reddit</h1>
     
-    <form action="/tacos">
+    <form action="https://www.reddit.com/search"> 
+    <!-- This will send the form to reddit.com and search' -->
+
+        <label for="username">Search: </label>
+        <input type="text" name="q" id="username">
+            <br><br>
+        <button>Search Reddit...</button>
+
+    </form>
+
+    <h1>This form searches Google</h1>
+
+    <form action="https://www.google.com/search">
+        <input type="text" name="q">
+        <button>Search Google...</button>
+
+    </form>
+
+    <h1>This form searches YouTube</h1>
+
+    <form action="https://www.youtube.com/results">
+        <input type="text" name="search_query">
+        <button>Search YouTube</button>
+    </form>
+
+    <h1>This form shows Checkboxes and Radio Buttons</h1>
+
+    <form action="/" style="border:1px solid black;width:400px">
+        <input type="checkbox" name="agree_tos" id="agree" checked>
+        <label for="agree">I agree to everything</label>
+
+        <p>Here are radio buttons; they need the same 'name' to be linked</p>
+        <label for="xs">XS</label>
+        <input type="radio" name="size" id="xs" value="xs">
+        <label for="med">Medium</label>
+        <input type="radio" name="size" id="med" value="medium">
+        <label for="large">Large</label>
+        <input type="radio" name="size" id="large" value="large">
+
+        <p>
+            <label for="meal">Please select an entree</label>
+            <select name="meal" id="meal">
+                <option value="fish">Fish</option>
+                <option value="veg" selected>Vegetarian</option>
+                <option value="fish">More fish</option>
+            </select>
+        </p>
+        <br><br>
+        <button>Submit</button>
+    </form>
+
+
+    <br><br><br>
+
+    <form>
+    
         <!-- 'for=' and 'id=' work together to link a label to input -->
         <!-- 'name=' is what the server will look for-->
         <label for="username">Enter your username: </label>
