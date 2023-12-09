@@ -14,3 +14,11 @@ const mappedArray = array.map(function (el) {
 mappedArray.forEach(function(el) {
     console.log(el);
 })
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+let x = numbers.map(function(ele) {
+    return ele * ele;
+})
+
+console.log(x);

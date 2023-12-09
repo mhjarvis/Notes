@@ -12,3 +12,15 @@ The ```forEach()``` syntax expects a function expression as its input, which it 
 ## map()
 ```map()``` is similar to ```forEach()```, except that it will generate a new array after running the function on each element.
 
+    const array = ['ro', 'markus', 'jfsoijoi']
+    const mappedArray = array.map(function (el) {
+        return el.toUpperCase();
+    })
+
+    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    let x = numbers.map(function(ele) {
+        return ele * ele;
+    })
+
+## Arrow Functions
