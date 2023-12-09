@@ -24,3 +24,12 @@ The ```forEach()``` syntax expects a function expression as its input, which it 
     })
 
 ## Arrow Functions
+A newer / simpler syntax for defining function expressions (essentially, removing the function keyword). 
+
+    const square = (x) => {
+        return x * x;
+    }
+
+    const add = (x, y) => {
+        return x + y;
+    }
