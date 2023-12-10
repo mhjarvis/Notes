@@ -33,3 +33,13 @@ A newer / simpler syntax for defining function expressions (essentially, removin
     const add = (x, y) => {
         return x + y;
     }
+
+Arrow functions can also omit the return key with implicit returns. 
+
+    const rollDie = () => (
+        Math.floor(Math.random() * 6) +1;
+    )
+
+Or it can be reduced to one line.
+
+    const add = (a, b) => a + b;
