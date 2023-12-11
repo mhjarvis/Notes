@@ -44,7 +44,8 @@ const rollDie = () => {
 console.log('Arrow Function Ex 2: ', rollDie)
 
 /**
- * Arrow functions without return keyword
+ * Arrow functions without return keyword (implicit returns)
+ * Only works if there is only one statement
  */
 
 const rollDie2 = () => (
@@ -55,9 +56,13 @@ console.log('\n Without return keyword, rollDie2: ', rollDie2())
 
 /**
  * Arrow functions all on one line
+ * Only works if there is only one statement
  */
 
 const add2 = (a, b) => a + b;
 
 console.log('\n Add function all on one line (1 + 5): ', add2(1, 5));
 
+/**
+ * 
+ */
