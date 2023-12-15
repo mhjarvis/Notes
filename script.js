@@ -1,5 +1,9 @@
 const container = document.querySelector('.container')
+const big = document.querySelector('#big')
+const medium = document.querySelector('#medium')
+const small = document.querySelector('#small')
 
+const ships = document.querySelectorAll('.ship')
 
 let arr = []
 for (let i = 0; i < 100; i++) {
@@ -9,4 +13,3 @@ for (let i = 0; i < 100; i++) {
     container.append(div);
 }
 
-console.log('heelp')
