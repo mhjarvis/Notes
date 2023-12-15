@@ -13,3 +13,11 @@ for (let i = 0; i < 100; i++) {
     container.append(div);
 }
 
+for (let i = 0; i < ships.length; i++) {
+    ships[i].addEventListener('dragstart', (event) => {
+        event.target.classList.add('newColor')
+    })
+    ships[i].addEventListener('dragend', (event) => {
+        event.target.classList.remove('newColor')
+    })
+}    
