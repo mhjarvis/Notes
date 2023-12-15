@@ -49,4 +49,5 @@ These response status codes indivate whether a HTTP request has been successfull
     Client error responses  (400 - 499)
     Server error responnes  (500 - 599)
 
-## HTTP Headers
+## [HTTP Headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
+Allows client and server to pass information with an HTTP request / response.
