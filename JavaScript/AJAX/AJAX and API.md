@@ -29,9 +29,11 @@ An example JSON return from a weather API (as a 'data' object) could be as follo
         }
     }
 
-In order to use this data, we need to turn it into valid JavaScript data:
+To turn data received from the API, we will need to use ```JSON.parse(data)```. To turn data into JSON data, we need to use ```JSON.stringify(data)```. 
 
-    const parsedData = JSON.parse(data)             // parse data
+## Using Hoppscotch (or Postman)
+Postman/Hoppscotch helps us make API calls (https://hoppscotch.io/). These allow us to test APIs as well. Overall, this program makes it easier for us to work with data when initially making a API request. For example, we can test cat facts by entering the url (gotten via their site):
 
-    console.log(parsedData.main.temp)               // print temp (293.25)
+    https://catfact.ninja/fact or               // /fact API call
+    https://catfact.ninja/facts                 // /facts API call
 
