@@ -31,14 +31,21 @@ An example JSON return from a weather API (as a 'data' object) could be as follo
 
 To turn data received from the API, we will need to use ```JSON.parse(data)```. To turn data into JSON data, we need to use ```JSON.stringify(data)```. 
 
-## Using Hoppscotch (or Postman)
+## [Using Hoppscotch (or Postman)](https://hoppscotch.io/)
 Postman/Hoppscotch helps us make API calls (https://hoppscotch.io/). These allow us to test APIs as well. Overall, this program makes it easier for us to work with data when initially making a API request. For example, we can test cat facts by entering the url (gotten via their site):
 
     https://catfact.ninja/fact or               // /fact API call
     https://catfact.ninja/facts                 // /facts API call
 
-## HTTP Verbs
+## [HTTP Verbs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
 HTTP Verbs refers to a set of 'request methods' that indicates the desired action to be performed for a given resource. For example: ```GET```, ```POST```, ```PUT```, ```DELETE```, etc. ```GET``` will allow us to get data from, for example, an API, while ```POST``` would be used to send data, to a server, for example.
 
-## HTTP Status Codes
+## [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+These response status codes indivate whether a HTTP request has been successfully completed and are grouped in five classes:
+
+    Informational responses (100 - 199)
+    Successful responses    (200 - 299)
+    Redirection messages    (300 - 399)
+    Client error responses  (400 - 499)
+    Server error responnes  (500 - 599)
 
