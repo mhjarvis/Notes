@@ -37,3 +37,8 @@ Postman/Hoppscotch helps us make API calls (https://hoppscotch.io/). These allow
     https://catfact.ninja/fact or               // /fact API call
     https://catfact.ninja/facts                 // /facts API call
 
+## HTTP Verbs
+HTTP Verbs refers to a set of 'request methods' that indicates the desired action to be performed for a given resource. For example: ```GET```, ```POST```, ```PUT```, ```DELETE```, etc. ```GET``` will allow us to get data from, for example, an API, while ```POST``` would be used to send data, to a server, for example.
+
+## HTTP Status Codes
+
