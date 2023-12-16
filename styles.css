@@ -63,3 +63,8 @@ body {
 .newColor {
     background-color: gray;
 }
+
+.squareOver {
+    background-color: gray;
+    border: 1px dotted black;
+}
