@@ -59,3 +59,17 @@ function getCoverage(value) {
 
     return arr;
 }
+
+
+fetch("https://swapi.dev/api/people/1/")
+.then(res => {
+    console.log("Resolved", res)
+    return res.json()
+})
+.then(data => {
+    console.log(data)
+})
+.cath(e => {
+    console.log("Error", e)
+})
+
