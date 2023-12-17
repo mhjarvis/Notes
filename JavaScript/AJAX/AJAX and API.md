@@ -51,3 +51,18 @@ These response status codes indivate whether a HTTP request has been successfull
 
 ## [HTTP Headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
 Allows client and server to pass information with an HTTP request / response.
+
+## Using the Fetch API
+Fetch is a JavaScript function used to fetch resources from a server and allows things such as promises. 
+
+    fetch("https://swapi.dev/api/people/1/")
+    .then(res => {
+        console.log("Resolved", res)
+        return res.json()
+    })
+    .then(data => {
+        console.log(data)
+    })
+    .cath(e => {
+        console.log("Error", e)
+    })
