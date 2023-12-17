@@ -89,5 +89,29 @@ Fetch using async:
         } catch (e) {
             console.log("Error:", e)
         }
-
     }
+
+## [Axios](https://github.com/axios/axios#installing)
+Third-party library for creating HTTP requests. It does use Fetch in the browser. You can use ```npm``` if you would like or use a ```script``` tag via their repo.
+
+    axios.get(https://swapi.dev/api/people/1/");    // returns promise
+    .then(res => {
+        console.log('Response:\n", res)             // includes data 
+    })                                              // no call to JSON
+    .catch((e) => {
+        console.log('Error:\n", e)
+    })
+
+Refactored to be async function:
+
+    const getStarWarsPerson = async (id) => {
+        try {
+            const res = await axios.get(`https://swapi.dev/api/people/${id}/`)
+            console.log(res.data)
+        } catch(e) {
+            console.log(e)
+        }
+    }
+
+    getStarWarsPerson(1)        // use variable to get different persons
+    getStarWarsPerson(9)
