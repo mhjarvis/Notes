@@ -115,3 +115,5 @@ Refactored to be async function:
 
     getStarWarsPerson(1)        // use variable to get different persons
     getStarWarsPerson(9)
+
+## Setting Headers with Axios
