@@ -117,3 +117,12 @@ Refactored to be async function:
     getStarWarsPerson(9)
 
 ## Setting Headers with Axios
+
+    get dadJoke = async () => {
+        const config = { headers: { Accept: 'application/json', }}
+        const res = await axios.get('https://icanhazdadjoke.com/', config)
+        console.log(res.data.joke)
+    }
+
+## [TV Show Search App](tvmaze.com/api)
+
