@@ -13,4 +13,4 @@ Git is a version control system that tracks and manages changes to files over ti
 ```git add [filename] [filename]``` -   adds files to the staging area from the working directory.
 ```git commit -m ["message"]``` - commit changes from the staging area to the repository; must include message. 
 ```git log``` print list of commits.
-
+```git commit --amend``` - allows you to ammend the previous commit only
