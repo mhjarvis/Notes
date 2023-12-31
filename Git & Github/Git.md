@@ -4,6 +4,7 @@
 Git is a version control system that tracks and manages changes to files over time. 
 
 [Git documentation](https://git-scm.com/)
+[GitKraken - Git GUI](https://www.gitkraken.com/)
 
 ## Git Basics
 
