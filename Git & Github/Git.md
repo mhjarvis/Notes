@@ -1,12 +1,12 @@
-<h1 style="text-align: center">Git</h1>
+<h1 style="text-align: center; font-size:3em">Git</h1>
 
-## What is Git
+# What is Git
 Git is a version control system that tracks and manages changes to files over time. 
 
 * [Git documentation](https://git-scm.com/)
 * [GitKraken (GUI)](https://www.gitkraken.com/)
 
-## Git Basics
+# Git Basics
 
 ```git status``` - gives information on the current status of a git repository and its contents. 
 ```git init``` - creates a new git repository in the current directory.
@@ -31,5 +31,14 @@ Create the ```.gitignore``` file in the root of a repository. Inside this file y
 
 Use [gitignore.io](https://www.toptal.com/developers/gitignore) to help create the ```.gitignore``` file depending on the type of project you are working on.
 
-## Branching
+# Branching
 Branches is what allows multiple developers work on a project, using the same code base. Think different timelines that will not impact each other (unless you merge them). 
+
+* The Master Branch (or Main) - often this is the branch designated as the 'source' or 'truth' branch of their codebase.
+* Head - this is simply a pointer that refers to the current 'location' in your repository. It is a branch reference and usually points to the most recent commit made.
+
+* ```git branch``` - shows us current branches in a repository.
+* ```git branch <branch-name>``` - makes a new branch based on the current HEAD. This only creates a branch, it does not switch to it.
+* ```git switch <branch-name>``` - switch to the named branch.
+* ```git checkout <branch-name>``` - also allows switching between branches. This command also performs a variety of additional things.
+* ```git switch -c <branch-name>``` - create the new named branch AND switch to that branch.
