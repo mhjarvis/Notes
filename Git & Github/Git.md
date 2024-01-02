@@ -24,3 +24,12 @@ Git can be told to ignore certain files in a repository using a ```gitignore``` 
 * Log files
 * Dependecies and packages
 
+Create the ```.gitignore``` file in the root of a repository. Inside this file you can write patterns to tell which files/folders are to be ignored.
+
+    .DS_Store           // individual files ignored
+    /somefolder         // ignore folder or directory
+
+Use [gitignore.io](https://www.toptal.com/developers/gitignore) to help create the ```.gitignore``` file depending on the type of project you are working on.
+
+## Branching
+Branches is what allows multiple developers work on a project, using the same code base. Think different timelines that will not impact each other (unless you merge them). 
