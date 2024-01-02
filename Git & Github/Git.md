@@ -42,3 +42,10 @@ Branches is what allows multiple developers work on a project, using the same co
 * ```git switch <branch-name>``` - switch to the named branch.
 * ```git checkout <branch-name>``` - also allows switching between branches. This command also performs a variety of additional things.
 * ```git switch -c <branch-name>``` - create the new named branch AND switch to that branch.
+
+Switching to a branch without first commiting or stashing them will throw an error.
+
+## Deleting and Renaming a Branch
+
+* ```git branch -d <branch-name>``` - if the branch has not been merged, it will throw and error. You can bypass using the `-D` option to force the delete.
+* ```git branch -m <new-branch-name>``` - rename branch will only work if you are on the actual branch you want to rename.
