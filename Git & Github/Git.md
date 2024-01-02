@@ -62,17 +62,4 @@ This type of merge simply moves the HEAD pointer forward to incorporate the chan
     git switch <branch-name>            // (usually main branch)
     git merge <branch-name>
 
-    afsaiowfjaoifjawfjawfwf
-    sfaefefafaefw
-    fefa
-    aeea
-    ae
-    f
-    ef
-    sdafafdfaf
-    fas
-    df
-
-
-
-    asfafewfwfaef
+##
