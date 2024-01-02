@@ -49,3 +49,30 @@ Switching to a branch without first commiting or stashing them will throw an err
 
 * ```git branch -d <branch-name>``` - if the branch has not been merged, it will throw and error. You can bypass using the `-D` option to force the delete.
 * ```git branch -m <new-branch-name>``` - rename branch will only work if you are on the actual branch you want to rename.
+
+# Merging
+Merging allows us to incorporate change from one branch into another. Branches are merged and not commits and we always merge to the current HEAD branch. Merging is a two step process:
+
+1. Switch to or checkout to the branch you want to merge the changes into.
+2. Use the ```git merge``` command to merge changes from a specific branch. 
+
+## Fast-forward Merge
+This type of merge simply moves the HEAD pointer forward to incorporate the changes on the branch you are merging. 
+
+    git switch <branch-name>            // (usually main branch)
+    git merge <branch-name>
+
+    afsaiowfjaoifjawfjawfwf
+    sfaefefafaefw
+    fefa
+    aeea
+    ae
+    f
+    ef
+    sdafafdfaf
+    fas
+    df
+
+
+
+    asfafewfwfaef
