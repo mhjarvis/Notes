@@ -22,7 +22,7 @@ There is also a usable shorthand property:
 
 [The Odin Project Link](https://www.theodinproject.com/lessons/node-path-advanced-html-and-css-transitions)<br>
 [MDN - Using transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)<br>
-
+[Animations](https://web.dev/articles/animations-guide)<br>
 
 # 
 
