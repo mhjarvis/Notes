@@ -3,6 +3,8 @@
 # General
 The ```transform``` property allows you to change the appearance of elements without affecting the document flow. ```transform``` takes in one or more transform functions (with each taking in their own value). Most elements can be transformed with some exceptions (such as non-replaced inline elements).
 
+<u>If you want to move things visually, use the ```transform``` property.</u>
+
 [The Odin Project Link](https://www.theodinproject.com/lessons/node-path-advanced-html-and-css-transforms)<br>
 [MDN Link](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#values)<br>
 [CSS-Tricks on ```perspective()```](https://css-tricks.com/how-css-perspective-works/)<br>
