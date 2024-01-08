@@ -6,8 +6,6 @@ Keyframes are like "animation milestones", marking key moments in an element's t
 [MDN - CSS Animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)<br>
 [MDN - @keyframes](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes)<br>
 
-
-
 ## Animation Poperties
 The first part of the animation process is the configuration stage - where animation properties are defined on the element that they will affect. Some of these include:
 
