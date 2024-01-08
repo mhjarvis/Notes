@@ -7,13 +7,14 @@ The ```transform``` property allows you to change the appearance of elements wit
 
 [The Odin Project Link](https://www.theodinproject.com/lessons/node-path-advanced-html-and-css-transforms)<br>
 [MDN Link](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#values)<br>
-[CSS-Tricks on ```perspective()```](https://css-tricks.com/how-css-perspective-works/)<br>
+[CSS-Tricks on transform()](https://css-tricks.com/almanac/properties/t/transform/)<br>
+[CSS-Tricks on perspective()](https://css-tricks.com/how-css-perspective-works/)<br>
 [Transform Tutorial](https://www.joshwcomeau.com/css/transforms/)
 
 # Two-Dimensional Transforms
 
 ### ```rotate()```
-```rotate()``` is the tranform function value to rotate an element on a 2D plance:
+```rotate()``` is the tranform function value to rotate an element on a 2D plance. By default, ```rotate``` will rotate around the center axis.
 
     .element {
         transform: rotate(45deg);
@@ -40,7 +41,7 @@ The ```transform``` property allows you to change the appearance of elements wit
     }
 
 ### ```translate()```
-```translate()``` is a transform function value that translates an element on a 2D plane:
+```translate()``` is a transform function value that translates an element on a 2D plane. <u>This is a nice alternative when you are not working with relative or absolute positioning (or don't want to).</u>
 
     .element {
         transform: translateX(20px);
@@ -48,7 +49,7 @@ The ```transform``` property allows you to change the appearance of elements wit
         transform: translate(20px, -33%);
     }
 
-## Chaining Multiple Transforms
+# Chaining Multiple Transforms
 Multiple transforms can be added by placing a space between each one:
 
     .element {
@@ -90,3 +91,12 @@ This tells the object to render as if we are viewing it from a specific distance
         transform: translate3d();
     }
 
+# Summary
+The transform property has four main values to use, with each of those values also having their own. Transform shorthand will allow us to directly make changes to an element. Then, using the ```transform-origin``` property, we can select where that transform is applied.
+
+    transform: rotateZ(45deg) translateX(2rem) translateY(2rem);
+    transform-origin: top left;
+                    : 25% 50%;
+
+* ```transform-origin``` - lets you choose where on the element something will happen (such as ```rotate(45deg)``` via the ```top left```).
+* 
