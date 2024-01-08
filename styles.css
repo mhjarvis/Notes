@@ -1,8 +1,22 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  border: 1px solid black;
+}
+
 .box {
   width: 100px;
   height: 100px;
-  background-color: black;
+  background-color: blue;
   color: white;
   text-align: center;
-  transform: scale(3)
+  transform: rotateZ(50deg) rotateY(50deg);
+
 }
