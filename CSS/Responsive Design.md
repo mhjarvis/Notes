@@ -2,6 +2,7 @@
 
 # General
 
+* [The Odin Project](https://www.theodinproject.com/lessons/node-path-advanced-html-and-css-natural-responsiveness)
 * [MDN - Viewport Meta Tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag)
 * 
 
@@ -13,3 +14,5 @@ Naturally flexibility is the first step to making responsive websites. For examp
 This also tells the browser not to zoom in or out.
 
 Avoid using fixed widths or heights and instead, use ```max-width```, ```min-width```, ```max-height```, and ```min-height```. Though, it is advisable to avoid using heights altogether (except perhaps in the header / footer). Instead, use margin and padding to control space around elements. 
+
+## Responsive Images
