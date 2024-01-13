@@ -7,3 +7,8 @@ NPM is really two things:
 2. A command line tool to easily install and manage those packages in our Node projects.
 
 NPM helps track all of the dependencies or other packages that our software depends on. It also makes it easy to install all fo the dependencies. 
+
+The easiest way to setup a NPM package is to use ```npm init``` in the directory you wish to set everything up.
+
+## ```package.json```
+This file will track all of the dependencies and additional information regarding your project. This is helpful for others when using our software since they will easily be able to install all required packages. 
