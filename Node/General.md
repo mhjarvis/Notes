@@ -5,3 +5,24 @@ Node is a "Javascript runtime". Node allows you to run JavaScript on a server an
 
 
     process.argv
+
+# Working with ```module.exports```
+In Node, we can work with different files by importing / exporting them as needed. If something is not exported / imported correctly, the function or variable will not work in the other file. 
+
+    /******* EXPORTING *******/
+    module.exports.add = add;                   // export a single function
+
+    const math = {                              // different way of writting a export function
+        add: add,
+        PI: PI,
+        square: square
+    }
+    module.exports = math;
+
+    module.exports.PI
+
+    /******* IMPORTING *******/
+    const math = require('./math');             // import a whole file
+    const {PI, square} = require('./math')      // import a single or certain functions
+
+Here, ```module.exports``` is simply an object that we are attatching functions / variables onto. 
