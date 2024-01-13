@@ -25,4 +25,4 @@ In Node, we can work with different files by importing / exporting them as neede
     const math = require('./math');             // import a whole file
     const {PI, square} = require('./math')      // import a single or certain functions
 
-Here, ```module.exports``` is simply an object that we are attatching functions / variables onto. 
+Here, ```module.exports``` is simply an object that we are attatching functions / variables onto. We can also export an entire directory (see the shelter example). When doing so, Node will look for the index.js file within that directory and import whatever that file is exporting.
