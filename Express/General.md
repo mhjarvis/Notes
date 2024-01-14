@@ -22,8 +22,28 @@ Express creates a JavaScript object for us (i.e. ```req``` below) by parsing the
     })
 
 # Express Routing
-When a request is sent, Express will check and find a matching route based on the path and method (e.g. GET, POST), and then sends you to the right handler function. Express is able to do this matching using ```app.get```:
+When a request is sent, Express will check and find a matching route based on the path and method (e.g. GET, POST), and then sends you to the right handler function. Express is able to do this matching using ```app.get```. You can have as many of these as needed. You can also use a generic path that will cover all possible 'paths', but make sure that this is placed last in the order, otherwise it will prevent legitemit paths from executing:
+
+    const express = require('express')      // import express framework
+    const app = express()
+
+    app.get('/', (req, res) => {
+        res.send('<h1>This is the HomePage</h1>')
+    })
 
     app.get('/cats', (req, res) => {
         console.log('Cat Request!')
+        res.send('<h1>This is the CATTTTTTTT page</h1>')
+    })
+
+    app.get('/dogs', (req, res) => {
+        res.send('<h1>WOOOOOoooOOOOOOfffFFFFFFFf</h1>')
+    })
+
+    app.get('*', (req, res) => {
+        res.send('<h1>404 Error</h1>')
+    })
+
+    app.listen(3000, () => {
+        console.log('Listening on port 3000...')
     })
