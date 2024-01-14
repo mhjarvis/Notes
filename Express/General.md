@@ -13,3 +13,17 @@ Express is a web framework for Node.js. It is a NPM package which comes with met
 
 ## Framework versus Library
 When using a LIBRARY, the flow of the application code is left up to you. In a FRAMEWORK, the control is inverted; the framework is in charge and tells you where to plug in the code.
+
+# Request and Response
+Express creates a JavaScript object for us (i.e. ```req``` below) by parsing the incoming HTTP content. We then respond to the request using the ```res```. This response can be varied.
+
+    app.use((req, res) => {
+        res.send('<h1>Message received; this is your response</h1>');
+    })
+
+# Express Routing
+When a request is sent, Express will check and find a matching route based on the path and method (e.g. GET, POST), and then sends you to the right handler function. Express is able to do this matching using ```app.get```:
+
+    app.get('/cats', (req, res) => {
+        console.log('Cat Request!')
+    })
