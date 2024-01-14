@@ -47,3 +47,5 @@ When a request is sent, Express will check and find a matching route based on th
     app.listen(3000, () => {
         console.log('Listening on port 3000...')
     })
+
+# Express Path Parameters
