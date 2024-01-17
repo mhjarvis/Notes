@@ -3,4 +3,4 @@
 # General
 
 
-React is a JavaScript library for building user interfaces.
+React is a JavaScript library for building user interfaces. React is declarative, meaning you define the target UI state(s), not the steps for how to get there.
