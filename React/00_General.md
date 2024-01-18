@@ -11,9 +11,6 @@ React is a JavaScript library for building user interfaces. React is declarative
 * React is not opinionated, which means that it won’t force you to follow any specific design patterns, project organizational structure, or logic. It’s all up to you.
 * A smaller learning curve, especially when you already have a good grasp of JavaScript and HTML/CSS from our previous lessons.
 
-### The JSX Extension
-The JSX extension on files means JavaScript Syntax eXtension, allowing us to describe and create HTML elements in JavaScript in a declarative way. JSX files are transformed into code that will work in the browser (JSX does not). 
-
 # Components
 Components are the main building blocks of React. Put together, these are what build websites / webapps. These components wrap HTML, CSS, JavaScript, and anything else used. You create small building blocks and use them to compose the UI, thus allowing reuse. 
 
@@ -21,3 +18,20 @@ Components are technically represented as JavaScript functions with two rules:
 1. The name starts with a uppercase character. 
 2. The function must return a 'renderable' value.
 
+# Rules of JSX
+The JSX extension on files means JavaScript Syntax eXtension, allowing us to describe and create HTML elements in JavaScript in a declarative way. JSX files are transformed into code that will work in the browser (JSX does not). 
+
+Rules for JSX implements are as follows:
+
+1. Return a single root element. This can be a ```div``` or a React fragment (```<></>```). As long as everything is wrapped in a single element, you can have as many children / other elements as you need.
+
+    function App() {
+        return (
+            <div>
+                <h1>Example1</h1>
+                <h2>Example2</h2>
+            </div>
+        )
+    }
+
+2. Close all tags
