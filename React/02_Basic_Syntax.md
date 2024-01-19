@@ -102,3 +102,9 @@ We can also destructure the props object using ```{}```:
             </li>
         )
     }
+
+# Storing Components in Files and Other Good Practices
+Generally, components should reside in their own files, unless, perhaps, if the two components are very very close in purpose. Generally, components will go into the ```components``` folder, under ```src```. File names should sync with the component name (e.g. ```Header.jsx```). Similarly, CSS for each of these componenets can be stored in a similarly named CSS file, in the componenets folder (e.g. Header.css). This is then imported into the ```Header.jsx``` file. While this file is imported directly on the ```jsx``` file, if you use CSS classes or tags that are contained in that file, they will still apply globaly.
+
+    import reactImg from '../assets/react-core-concepts.png';
+    import './Header.css'
