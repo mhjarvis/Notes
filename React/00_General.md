@@ -19,6 +19,10 @@ Components are technically represented as JavaScript functions with two rules:
 2. The function must return a 'renderable' value.
 
 # Rules of JSX
+
+* [React - Writing Markup with JSX](https://react.dev/learn/writing-markup-with-jsx)
+* [React - JavaScript in JSX](https://react.dev/learn/javascript-in-jsx-with-curly-braces)
+
 The JSX extension on files means JavaScript Syntax eXtension, allowing us to describe and create HTML elements in JavaScript in a declarative way. JSX files are transformed into code that will work in the browser (JSX does not). 
 
 Rules for JSX implements are as follows:
@@ -34,4 +38,26 @@ Rules for JSX implements are as follows:
         )
     }
 
-2. Close all tags
+2. Close all tags. In HTML, many tags are self-closing; in JSX, these must be explicitly closed and wrapped.
+
+    function App() {
+        return (
+            <>
+                <input />
+                <li></li>
+            </>
+        )
+    }
+
+3. camelCase <strong>Most</strong> things. JSX turns into JavaScript, and attributes of elements become keys of JavaScript, so you cannot use dashess or reserved words such as ```class```.
+
+    function App() {
+        return (
+            <div className="container">
+                <svg>
+                    <circle cx="25" cy="75" r="20" stroke="green" strokeWidth="2" />
+                </svg>
+            </div>
+        )
+    }
+
