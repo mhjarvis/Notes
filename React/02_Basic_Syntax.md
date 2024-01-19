@@ -40,7 +40,8 @@ Then, we can use the imported image variable as a JavaScript function within our
     }
 
 # Making Components Reusable with Props Syntax
-React allows you to pass data to components via a concept called "Props". This allows you to reuse componenets but with different text or content. When using the ```props``` parameter, a object will be sent to it containing the values needed for the function to work.
+
+React allows you to pass data to components via a concept called "Props". This allows you to reuse componenets but with different text or content. When using the `props` parameter, a object will be sent to it containing the values needed for the function to work.
 
     function CoreConcept(props) {               // new component
         return (
@@ -60,10 +61,10 @@ React allows you to pass data to components via a concept called "Props". This a
                     <section id="core-concepts">
                         <h2>Core Concepts</h2>
                         <ul>
-                            <CoreConcept 
-                                title="Components" 
+                            <CoreConcept
+                                title="Components"
                                 description="The core UI building block."
-                                img={componentsImg} 
+                                img={componentsImg}
                                 />
                             <CoreConcept />
                         </ul>
@@ -81,17 +82,17 @@ Alternativly, you can import everything from a pre-built array in a different fi
         <h2>Core Concepts</h2>
         <ul>
             <CoreConcept {...CORE_CONCEPTS[0]} />           // spread operator
-            <CoreConcept {...CORE_CONCEPTS[1]} />           
+            <CoreConcept {...CORE_CONCEPTS[1]} />
             <CoreConcept {...CORE_CONCEPTS[2]} />
             <CoreConcept                                    // long way
-              title={CORE_CONCEPTS[3].title} 
+              title={CORE_CONCEPTS[3].title}
               description={CORE_CONCEPTS[3].description}
-              image={CORE_CONCEPTS[3].image} 
-            />          
+              image={CORE_CONCEPTS[3].image}
+            />
         </ul>
     ...
 
-We can also destructure the props object using ```{}```:
+We can also destructure the props object using `{}`:
 
     function CoreConcept({image, title, description}) {
         return (
@@ -104,7 +105,12 @@ We can also destructure the props object using ```{}```:
     }
 
 # Storing Components in Files and Other Good Practices
-Generally, components should reside in their own files, unless, perhaps, if the two components are very very close in purpose. Generally, components will go into the ```components``` folder, under ```src```. File names should sync with the component name (e.g. ```Header.jsx```). Similarly, CSS for each of these componenets can be stored in a similarly named CSS file, in the componenets folder (e.g. Header.css). This is then imported into the ```Header.jsx``` file. While this file is imported directly on the ```jsx``` file, if you use CSS classes or tags that are contained in that file, they will still apply globaly.
+
+Generally, components should reside in their own files, unless, perhaps, if the two components are very very close in purpose. Generally, components will go into the `components` folder, under `src`. File names should sync with the component name (e.g. `Header.jsx`). Similarly, CSS for each of these componenets can be stored in a similarly named CSS file, in the componenets folder (e.g. Header.css). This is then imported into the `Header.jsx` file. While this file is imported directly on the `jsx` file, if you use CSS classes or tags that are contained in that file, they will still apply globaly.
 
     import reactImg from '../assets/react-core-concepts.png';
     import './Header.css'
+
+# The ```children``` Prop
+
+React automatically passes a special prop named ```children``` to every custom component. The content between component opening and closing tags is used as a value for the special "children" prop. 
