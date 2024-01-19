@@ -72,3 +72,33 @@ React allows you to pass data to components via a concept called "Props". This a
             </div>
         );
     }
+
+Alternativly, you can import everything from a pre-built array in a different file. This can also be done using the spread operator:
+
+    import { CORE_CONCEPTS } from './data.js';
+
+    ...
+        <h2>Core Concepts</h2>
+        <ul>
+            <CoreConcept {...CORE_CONCEPTS[0]} />           // spread operator
+            <CoreConcept {...CORE_CONCEPTS[1]} />           
+            <CoreConcept {...CORE_CONCEPTS[2]} />
+            <CoreConcept                                    // long way
+              title={CORE_CONCEPTS[3].title} 
+              description={CORE_CONCEPTS[3].description}
+              image={CORE_CONCEPTS[3].image} 
+            />          
+        </ul>
+    ...
+
+We can also destructure the props object using ```{}```:
+
+    function CoreConcept({image, title, description}) {
+        return (
+            <li>
+                <img src={image} alt={title} />
+                <h3>{title}</h3>
+                <p>{description}</p>
+            </li>
+        )
+    }
