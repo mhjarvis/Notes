@@ -38,3 +38,37 @@ Then, we can use the imported image variable as a JavaScript function within our
             </header>
         );
     }
+
+# Making Components Reusable with Props Syntax
+React allows you to pass data to components via a concept called "Props". This allows you to reuse componenets but with different text or content. When using the ```props``` parameter, a object will be sent to it containing the values needed for the function to work.
+
+    function CoreConcept(props) {               // new component
+        return (
+            <li>
+                <img src={props.img} alt="..." />
+                <h3>{props.title}</h3>
+                <p>{props.description}</p>
+            </li>
+        );
+    }
+
+    function App() {
+        return (
+            <div>
+                <Header />
+                <main>
+                    <section id="core-concepts">
+                        <h2>Core Concepts</h2>
+                        <ul>
+                            <CoreConcept 
+                                title="Components" 
+                                description="The core UI building block."
+                                img={componentsImg} 
+                                />
+                            <CoreConcept />
+                        </ul>
+                    </section>
+                </main>
+            </div>
+        );
+    }
