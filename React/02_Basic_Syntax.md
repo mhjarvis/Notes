@@ -126,3 +126,10 @@ In react, you add eventListeners to elements using a special prop. There are a l
     <button onClick={handleClick}>{children}</button>
 
 # Passing Function as Values to Props
+You can configure the execution of a event-dependent function by wrapping the function with another function.
+
+    onClick={ () => handleClick(5) }
+
+# States and Hooks
+
+React code usually only runs once. r
