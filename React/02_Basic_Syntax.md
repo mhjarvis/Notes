@@ -111,6 +111,18 @@ Generally, components should reside in their own files, unless, perhaps, if the 
     import reactImg from '../assets/react-core-concepts.png';
     import './Header.css'
 
-# The ```children``` Prop
+# The `children` Prop
 
-React automatically passes a special prop named ```children``` to every custom component. The content between component opening and closing tags is used as a value for the special "children" prop. 
+React automatically passes a special prop named `children` to every custom component. The content between component opening and closing tags is used as a value for the special "children" prop.
+
+# Reacting to Events
+
+In react, you add eventListeners to elements using a special prop. There are a large number of props available to us here. In this instance, we are using the `onClick` prop. When using the `onClick` prop, make sure not to use `()`, as this will cause the function to run when the element is created.
+
+    function handleClick() {
+        console.log('poop')
+    }
+
+    <button onClick={handleClick}>{children}</button>
+
+# Passing Function as Values to Props
