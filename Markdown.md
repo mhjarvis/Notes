@@ -40,3 +40,11 @@ Quotes are obtained using the carrot ```>``` before the quote.
 
 ## Ordered / Unordered Lists
 Use an `*` to create a unordered list. Use numbers `1, 2, etc.` to create a ordered list.
+
+
+---
+---
+***
+
+Demo: 
+![Demo](http://placehold.it/350x150)
