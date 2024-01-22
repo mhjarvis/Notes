@@ -29,3 +29,38 @@ function App() {
     );
 }
 ```
+
+## Rendering a List of Components in JSX
+
+`props` are arguments that are passed into components.
+
+```jsx
+function ListItem(props) {
+    return <li>{props.animal}</li>;
+}
+
+// props in this case contains the key 'animals' which is linked to the array 'animals'
+function List(props) {
+    return (
+        <ul>
+            {props.animals.map((animal) => {
+                return <ListItem key={animal} animal={animal} />;
+            })}
+        </ul>
+    );
+}
+
+function App() {
+    const animals = ["Lion", "Cow", "Snake", "Lizard"];
+
+    return (
+        <div>
+            <h1>Animals: </h1>
+            <!-- define the animals property on props with animals={animals} -->
+            <!-- this can be defined however we want, e.g. animalList={animals} -->
+            <List animals={animals} />
+            <!-- in other words, `animals: ["Lion", "Cow", "Snake", "Lizard"]`>
+        </div>
+    );
+}
+```
