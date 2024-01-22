@@ -3,8 +3,11 @@
 # General
 
 -   [Odin Project - Rendering Techniques](https://www.theodinproject.com/lessons/node-path-react-new-rendering-techniques)
+- [React - Conditional Rendering](https://react.dev/learn/conditional-rendering)
+- [React - Rendering Lists](https://react.dev/learn/rendering-lists)
 
-## Rendering a List of Elements in JSX
+
+# Rendering a List of Elements in JSX
 
 Most of the time you will be dealing with data structures, so it will make more sense to render items dynamically instead of hard-coding everything.
 
@@ -30,7 +33,7 @@ function App() {
 }
 ```
 
-## Rendering a List of Components in JSX
+# Rendering a List of Components in JSX
 
 `props` are arguments that are passed into components.
 
@@ -61,6 +64,101 @@ function App() {
             <!-- this can be defined however we want, e.g. animalList={animals} -->
             <List animals={animals} />
             <!-- in other words, `animals: ["Lion", "Cow", "Snake", "Lizard"]`>
+        </div>
+    );
+}
+```
+
+# Conditionally Rendering UI
+
+## Using Boolean Values
+
+One way to conditionally pick what is rendered is by using a boolean value.
+
+```jsx
+function List(props) {
+    return (
+        <ul>
+            {props.animals.map((animal) => {
+                return animal.startsWith("L") ? ( // true or false
+                    <li key={animal}>{animal}</li>
+                ) : null;
+            })}
+        </ul>
+    );
+}
+
+function App() {
+    const animals = ["Lion", "Cow", "Snake", "Lizard"];
+
+    return (
+        <div>
+            <h1>Animals: </h1>
+            <List animals={animals} />
+        </div>
+    );
+}
+```
+
+## Using the && Operator
+
+This can also be accomplished using the `&&` operator.
+
+```jsx
+function List(props) {
+    return (
+        <ul>
+            {props.animals.map((animal) => {
+                return animal.startsWith("L") && <li key={animal}>{animal}</li>;
+            })}
+        </ul>
+    );
+}
+
+function App() {
+    const animals = ["Lion", "Cow", "Snake", "Lizard"];
+
+    return (
+        <div>
+            <h1>Animals: </h1>
+            <List animals={animals} />
+        </div>
+    );
+}
+```
+
+## Other Ways to Render Conditionally
+
+Using `if`, `if/else`, and `switch` statements are also approaches that can be taken.
+
+```jsx
+function List(props) {
+    // this is usually a default for when a page is still loading - to show something
+    // to the user and indicate content is still being fetched.
+    if (!props.animals) {
+        // check if props is even assigned or exists
+        return <div>Loading...</div>;
+    }
+    if (props.animals.length === 0) {
+        // check if there is anything in the array
+        return <div>There are no animals in the list!</div>;
+    }
+    return (
+        <ul>
+            {props.animals.map((animal) => {
+                return <li key={animal}>{animal}</li>;
+            })}
+        </ul>
+    );
+}
+
+function App() {
+    const animals = [];
+
+    return (
+        <div>
+            <h1>Animals: </h1>
+            <List animals={animals} />
         </div>
     );
 }
