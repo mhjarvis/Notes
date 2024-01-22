@@ -36,14 +36,15 @@ function App() {
 
 ```jsx
 function ListItem(props) {
-    return <li>{props.animal}</li>;
+    return <li>{props.animal}</li>; // props includes the key 'animal' set to 'Lion', etc.
 }
 
 // props in this case contains the key 'animals' which is linked to the array 'animals'
 function List(props) {
     return (
         <ul>
-            {props.animals.map((animal) => {
+            {props.animals.map((animal) => {    // props.animals is the animals array
+                // set the key in ListItem to animal, and that to the animal from the array
                 return <ListItem key={animal} animal={animal} />;
             })}
         </ul>
