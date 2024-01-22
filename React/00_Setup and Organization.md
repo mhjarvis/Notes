@@ -2,9 +2,9 @@
 
 # Project Setup
 
-* [Odin Project - Setting Up a Rect Enviornment](https://www.theodinproject.com/lessons/node-path-react-new-setting-up-a-react-environment)
-* [Vite - Getting Started](https://vitejs.dev/guide/)
-* [Article - Debuggin Components with React Developer Tools](https://web.archive.org/web/20230127083036/https://www.pluralsight.com/guides/debugging-components-with-react-developer-tools)
+-   [Odin Project - Setting Up a Rect Enviornment](https://www.theodinproject.com/lessons/node-path-react-new-setting-up-a-react-environment)
+-   [Vite - Getting Started](https://vitejs.dev/guide/)
+-   [Article - Debuggin Components with React Developer Tools](https://web.archive.org/web/20230127083036/https://www.pluralsight.com/guides/debugging-components-with-react-developer-tools)
 
 ```jsx
     npm create vite@latest my-first-react-app -- --template react       // replace app name
