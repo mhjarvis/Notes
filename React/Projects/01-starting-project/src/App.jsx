@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Header from "./components/Header/Header.jsx";
 import { CORE_CONCEPTS } from "./data.js";
 import CoreConcept from "./components/CoreConcept.jsx";
@@ -5,11 +6,14 @@ import TabButton from "./components/TabButton.jsx";
 
 function App() {
 
+    const [ selectedTopic, setSelectedTopic ] = useState('Please click a button'); 
+
     let tabContent = 'Please click a button';
     /* This function will serve as a pointer wherever it is used. In other words, this function will be passed to the TabButton.jsx file when one of the buttons is pressed, and will be executed based on the whatever onSelect is tied to. */
     function handleSelect(selectedButton) {
+        setSelectedTopic(selectedButton)
         // selectedButton => components, jsx, props, state
-        tabContent = selectedButton;
+        //tabContent = selectedButton;
     }
 
     return (
@@ -37,7 +41,7 @@ function App() {
                         <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
                         <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
                     </menu>
-                    {tabContent}
+                    {selectedTopic}
                 </section>
             </main>
         </div>
