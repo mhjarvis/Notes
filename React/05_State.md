@@ -6,7 +6,7 @@
 -   [Articel - What is State?](https://academind.com/tutorials/what-is-state)
 -   [React - State: A Component's Memory](https://react.dev/learn/state-a-components-memory)
 -   [React - Render and Commit](https://react.dev/learn/render-and-commit)
-- [Article - React Reconciliation Algorithm](https://medium.com/javarevisited/react-reconciliation-algorithm-86e3e22c1b40)
+-   [Article - React Reconciliation Algorithm](https://medium.com/javarevisited/react-reconciliation-algorithm-86e3e22c1b40)
 
 Because apps will change over time - whether being changed by a button or updating information received from an API - React provides primitives to help manipulate the state of your apps, making them dynamic.
 
@@ -44,4 +44,68 @@ Hooks are functions that let you use React features. All hooks are recognizable 
 1. Only call Hooks inside of Component Functions; they cannot be called from inside loops or conditions.
 2. Only call Hooks on the top level.
 
-## How to Structure State
+# How to Structure State
+
+## State Should Not Be Mutated
+
+Do not mutate values. If we need to change state, we should always use the `setState` function.
+
+```jsx
+// BAD - Don't do this!
+const handleIncreaseAge = () => {
+    // mutating the current state object
+    person.age = person.age + 1; // this will increase the person.age value, but the page will never rerender to update the actual variable.
+    console.log(person.age); // this prints the increased value
+    setPerson(person);
+};
+
+// GOOD - Do this!
+const handleIncreaseAge = () => {
+    // copy the existing person object into a new object
+    // while updating the age property
+    const newPerson = { ...person, age: person.age + 1 };
+    setPerson(newPerson);
+};
+```
+
+We need to provide a new object to setState so that we can guarantee to rerender the page.
+
+## How `state` Updates
+
+State updates are asynchronous. State variables are not reactive, the components are. Calling `setState` re-renders the entire component instead of just changing the variable.
+
+The following creates an infinite loop.
+
+```jsx
+function Component() {
+    const [count, setCount] = useState(0);
+
+    setCount(count + 1); //this is called during render, REact detect the change, and rerenders, infinitly.
+
+    return <h1>{count}</h1>;
+}
+```
+
+### State Updater Funcfions
+
+// needs update
+
+## Controlled Components
+
+Some HTML elements maintain their own internal state, such as `input`. When you type into an `input`, it updates its own value on every keystroke. If you would like to control the value of the `input` element (i.e. set it yourself), controlled components are key.
+
+```jsx
+function CustomInput() {
+    cont [value, setValue] = useState('');
+
+    return (
+        <input
+            type="text"
+            value={value}
+            onChange={(event) => setValue(event.target.value)}
+        />
+    );
+}
+```
+
+Here we define our own state using the `useState` hook. We set the `value` prop of the `input` to the state variable and update the state variable on every `onChange` event. Now, when the user types something, React will ensure you have the latest text in `value`.
