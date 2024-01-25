@@ -7,6 +7,10 @@
 -   [React - State: A Component's Memory](https://react.dev/learn/state-a-components-memory)
 -   [React - Render and Commit](https://react.dev/learn/render-and-commit)
 -   [Article - React Reconciliation Algorithm](https://medium.com/javarevisited/react-reconciliation-algorithm-86e3e22c1b40)
+- [React - State as a Snapshot](https://react.dev/learn/state-as-a-snapshot)
+- [React - Choosing the State Structure](https://react.dev/learn/choosing-the-state-structure)
+- [React - Sharing State Between Components](https://react.dev/learn/sharing-state-between-components)
+
 
 Because apps will change over time - whether being changed by a button or updating information received from an API - React provides primitives to help manipulate the state of your apps, making them dynamic.
 
