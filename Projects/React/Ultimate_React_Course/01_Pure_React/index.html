@@ -6,6 +6,30 @@
     <title>Hello React</title>
 </head>
 <body>
+    <!-- This is the root element that will take the completed React app as its entry point -->
     <div id="root"></div>
+
+    <!-- This is not normally used - use a build tool instead;
+         This is done to manually include React -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- The following React App would be in its own file and imported here -->
+    <script>
+        function App() {
+            //const time = new Date().toLocaleTimeString();
+            const [time, setTime] = React.useState(new Date().toLocaleTimeString())
+
+            React.useEffect(function() {
+                setInterval(function() {
+                    setTime(new Date().toLocaleTimeString())
+                }, 1000)
+            } )
+            return React.createElement("header", null, `Hello React! ${time}`)
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'))
+        root.render(React.createElement(App))
+    </script>
 </body>
 </html>
