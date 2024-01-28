@@ -261,7 +261,7 @@ console.log(getTotalReviewCount(book));
 
 /**
  * MAP
- * Map does not change the original array!
+ * Map does not change the original array! (does not mutate; creates new array)
  */
 
 const books = getBooks();
@@ -288,12 +288,92 @@ const longBooks = books
     .filter((book) => book.hasMovieAdaptation);
 longBooks;
 
-const adventureBooks = books.filter((books) => books.genres.includes("adventure")).map((book) => book.title);
+const adventureBooks = books
+    .filter((books) => books.genres.includes("adventure"))
+    .map((book) => book.title);
 
 adventureBooks;
 
 /**
- * REDUCE method
+ * REDUCE method (does not mutate; creates new array)
  */
 
-const pagesAllBooks = books.reduce()
+// can do anything with reduce as you could with map/filter
+// acc = accumulator, or the running value;
+const pagesAllBooks = books.reduce((acc, book) => acc + book.pages, 0);
+pagesAllBooks;
+
+/**
+ * SORT method
+ */
+
+const arr = [3, 7, 1, 9, 6];
+const sorted = arr.sort((a, b) => a - b);
+// both of these arrays get sorted; the original array gets replaced
+sorted;
+arr;
+
+// this would not mutate the original:
+
+newArr = [3, 7, 1, 9, 6];
+const newSorted = newArr.slice().sort((a, b) => a - b);
+newSorted;
+newArr;
+
+const sortedByPages = books.slice().sort((a, b) => b.pages - a.pages);
+sortedByPages;
+
+/**
+ * Immutable Arrays - arrays that don't affect the original array
+ */
+
+// Add, delete, update elements of an array without changing the original one
+
+// 1. Add book object to array
+const newBook = {
+    id: 6,
+    title: "Harry Potter and Chamber of Secrets",
+    author: "J. K. Rowling",
+};
+const booksAfterAdd = [...books, newBook];
+booksAfterAdd;
+
+// 2. Delete book object from array
+
+// if the test is 'true', the value or obj will be kept
+const booksAfterDelete = booksAfterAdd.filter((book) => book.id !== 3); // the false value will be deleted
+booksAfterDelete;
+
+// 3. Update a book object in the array
+const booksAfterUpdate = booksAfterDelete.map((book) =>
+    book.id === 1 ? { ...book, pages: 1210 } : book
+);
+booksAfterUpdate;
+
+/**
+ * Asynchronous JavaScript
+ **/
+
+console.log(fetch("https://jsonplaceholder.typicode.com/todos/1")); // get data from api
+
+fetch("https://jsonplaceholder.typicode.com/todos/1")
+    .then((res) => res.json())
+    .then((data) => console.log(data, 'oldstuff'));
+
+console.log("poop");
+
+/**
+ * ASYNC/AWAI
+ */
+
+console.log("Async/Await...");
+
+async function getTodos() {
+    const res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+    const data = await res.json();
+    console.log(data);
+}
+
+getTodos()
+
+console.log('do stuff while waiting')
