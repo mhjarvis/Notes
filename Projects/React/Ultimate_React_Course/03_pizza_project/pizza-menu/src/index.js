@@ -2,7 +2,22 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 function App() {
-    return <h1>Hello React!</h1>;
+    return (
+        <>
+            <h1>Hello React!</h1>
+            <Pizza />
+        </>
+    );
+}
+
+function Pizza() {
+    return (
+        <>
+            <img src="pizzas/spinaci.jpg" alt="Pizza spinaci" />
+            <h2>Pizza Spinaci</h2>
+            <p>Tomato, mozarella, spinach, and ricotta cheese</p>
+        </>
+    );
 }
 
 // React v18
