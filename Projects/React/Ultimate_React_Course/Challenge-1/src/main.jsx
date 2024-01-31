@@ -3,16 +3,13 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 
 function Lang(props) {
-    return (
-        <>
-        </>
-    );
+    return <></>;
 }
 
 function Container() {
     return (
         <div className="container">
-            <img src="src/assets/jonas.jpeg" />
+            <img src="src/assets/jonas.jpeg" className="jonas" />
             <h1>Jonas Schmedtmann</h1>
             <p>
                 Full-stack web developer and teacher at Udemy. When not coding
