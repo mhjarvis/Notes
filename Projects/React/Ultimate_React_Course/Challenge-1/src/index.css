@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&display=swap");
+
+
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -74,11 +78,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: "IBM Plex Mono", sans-serif;
 }
 
 h1 {
   font-size: 1.5rem;
   width: 90%;
+  margin-bottom: -5px;
+  font-weight: 900;
 }
 
 .container {
@@ -91,8 +98,58 @@ h1 {
 
 .container p {
   max-width: 90%;
+  font-size: 12px;
+  font-weight: 900;
 }
 
 .jonas {
   max-width: 300px;
+}
+
+.tag {
+  font-size: 12px;
+  max-width: 200px;
+  font-weight: 900;
+}
+
+.blue {
+  background-color: rgb(31, 110, 227);
+}
+
+.yellow {
+  background-color: rgb(243, 235, 74);
+}
+
+.red {
+  background-color: rgb(241, 80, 80);
+}
+
+.light-blue {
+  background-color: lightblue;
+}
+
+.green {
+  background-color: rgb(183, 234, 183);
+}
+
+.tag-container {
+  display: flex;
+  margin: 3px;
+  flex-direction: row;
+  align-items: center;
+  max-width: 150px;
+  height: 20px;
+  border-radius: 4px;
+  padding: 0 10px;
+}
+
+.all-tags {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.emoji {
+  margin-left: 5px;
 }
