@@ -72,7 +72,6 @@ function Header() {
         </header>
     );
 }
-
 function Menu() {
     const pizzas = pizzaData;
     const numOfPizzas = pizzas.length;
