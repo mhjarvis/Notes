@@ -75,17 +75,21 @@ function Header() {
 
 function Menu() {
     const pizzas = pizzaData;
+    const numOfPizzas = pizzas.length;
 
     return (
         <main className="menu">
             <h2>Our menu</h2>
 
-            {pizzas && (
+            {/*             {pizzas && ( */}
+            {numOfPizzas > 0 ? (
                 <ul className="pizzas">
                     {pizzas.map((pizza) => (
                         <Pizza pizzaObj={pizza} key={pizza.name} />
                     ))}
                 </ul>
+            ) : (
+                <p>We're still working on our menu, please come back later</p>
             )}
 
             {/*             <Pizza
@@ -109,6 +113,9 @@ function Menu() {
 }
 
 function Pizza(props) {
+
+    if(props.pizzaObj.soldOut) return null;
+
     return (
         <li className="pizza">
             <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
@@ -127,16 +134,23 @@ function Footer() {
     const closeHour = 22;
     const isOpen = hour >= openHour && hour <= closeHour;
 
+    /*     if(!isOpen) return <p>CLOSED</p>;    */
+
     return (
         <footer className="footer">
-            {isOpen && (
+            {isOpen ? (
                 <div className="order">
                     <p>
+
+
+                        
                         We're open until {closeHour}:00. Come visit us or order
                         online.
                     </p>
                     <button className="btn">Order</button>
                 </div>
+            ) : (
+                <p>We are not open!</p>
             )}
         </footer>
     );
