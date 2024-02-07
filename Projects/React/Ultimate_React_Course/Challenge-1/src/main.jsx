@@ -1,7 +1,39 @@
-
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+
+const skills = [
+    {
+        skill: "HTML+CSS",
+        level: "advanced",
+        color: "#2662EA",
+    },
+    {
+        skill: "JavaScript",
+        level: "advanced",
+        color: "#EFD81D",
+    },
+    {
+        skill: "Web Design",
+        level: "advanced",
+        color: "#C3DCAF",
+    },
+    {
+        skill: "Git and GitHub",
+        level: "intermediate",
+        color: "#E84F33",
+    },
+    {
+        skill: "React",
+        level: "advanced",
+        color: "#60DAFB",
+    },
+    {
+        skill: "Svelte",
+        level: "beginner",
+        color: "#FF3B00",
+    },
+];
 
 function Lang(props) {
     return (
@@ -12,9 +44,9 @@ function Lang(props) {
     );
 }
 
-function Container() {
+function Intro() {
     return (
-        <div className="container">
+        <>
             <img src="src/assets/jonas.jpeg" className="jonas" />
             <h1>Jonas Schmedtmann</h1>
             <p>
@@ -22,44 +54,23 @@ function Container() {
                 oro preparing a course, I like to play board games, to cook and
                 eat, or to just enjoy the Portuguese sun at the beach.
             </p>
-            <div className="all-tags">
-                <Lang
-                    name="HTML+CSS"
-                    divClass="blue tag-container"
-                    className="tag"
-                    emoji="💪"
-                />
-                <Lang
-                    name="JavaScript"
-                    divClass="yellow tag-container"
-                    className="tag"
-                    emoji="👶"
-                />
-                <Lang
-                    name="Web Design"
-                    divClass="red tag-container"
-                    className="tag"
-                    emoji="💪"
-                />
-                <Lang
-                    name="Git and Github"
-                    divClass="light-blue tag-container"
-                    className="tag"
-                    emoji="💪"
-                />
-                <Lang
-                    name="React"
-                    divClass="green tag-container"
-                    className="tag"
-                    emoji="💪"
-                />
-                <Lang
-                    name="Node"
-                    divClass="blue tag-container"
-                    className="tag"
-                    emoji="💪"
-                />
-            </div>
+        </>
+    );
+}
+
+function Skills() {
+    return (
+        <div className="all-tags">
+            <Lang />
+        </div>
+    );
+}
+
+function Container() {
+    return (
+        <div className="container">
+            <Intro />
+            <Skills />
         </div>
     );
 }
