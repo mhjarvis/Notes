@@ -35,11 +35,38 @@ const skills = [
     },
 ];
 
-function Lang(props) {
+console.log(skills);
+
+function Lang() {
     return (
+        <div>
+            {skills.map((skill) => (
+                // eslint-disable-next-line react/jsx-key
+                <Skill
+                    skill={skill.skill}
+                    color={skill.color}
+                    level={skill.level}
+                />
+            ))}
+        </div>
+    );
+    /*     return (
         <div className={props.divClass}>
             <p className={props.className}>{props.name}</p>
             <p className="emoji">{props.emoji}</p>
+        </div>
+    ); */
+}
+
+function Skill({ skill, color, level }) {
+    return (
+        <div className="props.divClass" style={{ backgroundColor: color }}>
+            <span>{skill}</span>
+            <span className="emoji">
+                {level === "beginner" && "👶"}
+                {level === "intermediate" && "👍"}
+                {level === "advanced" && "💪"}
+            </span>
         </div>
     );
 }
