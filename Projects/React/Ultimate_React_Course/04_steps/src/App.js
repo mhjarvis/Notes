@@ -7,6 +7,7 @@ const messages = [
 ];
 
 export default function App() {
+	/* 	useState will update the step variable; this has to be `const`  */
     const [step, setStep] = useState(1);
 
     function handlePrevious() {
