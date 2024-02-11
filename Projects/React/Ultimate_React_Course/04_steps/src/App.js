@@ -7,17 +7,17 @@ const messages = [
 ];
 
 export default function App() {
-	/* 	useState will update the step variable; this has to be `const`  */
+    /* 	useState will update the step variable; this has to be `const`  */
     const [step, setStep] = useState(1);
 
     function handlePrevious() {
-		if (step > 1) setStep(step - 1);
-	}
+        if (step > 1) setStep(step - 1);
+    }
 
     function handleNext() {
-		if (step < 3) setStep(step + 1);
-	}
-	
+        if (step < 3) setStep(step + 1);
+    }
+
     return (
         <div className="steps">
             <div className="numbers">
