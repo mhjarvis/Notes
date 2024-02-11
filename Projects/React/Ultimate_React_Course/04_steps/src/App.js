@@ -18,6 +18,7 @@ export default function App() {
         if (step < 3) setStep(step + 1);
     }
 
+	
     return (
         <div className="steps">
             <div className="numbers">
