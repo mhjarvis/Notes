@@ -10,6 +10,16 @@ root.render(
     <App />
   </React.StrictMode>
 );
+/* 
+
+REMOVED THE FOLLOWING FROM package.json AS IT WAS CAUSING ESLINT ISSUES
+
+"eslintConfig": {
+  "extends": [
+    "react-app",
+    "react-app/jest"
+  ]
+}, */
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
