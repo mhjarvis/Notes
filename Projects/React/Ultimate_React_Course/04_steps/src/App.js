@@ -16,16 +16,18 @@ export default function App() {
     }
 
     function handleNext() {
-        if (step < 3) setStep(step + 1);
+        if (step < 3) {
+            setStep((s) => s + 1);      // 's' = step
+            // setStep((s) => s + 1);      // jump forward twice
+        }
     }
 
     return (
         <>
-            <button className="close" onClick={() => setIsOpen(!isOpen)}>
+            <button className="close" onClick={() => setIsOpen((isOpen) => !isOpen)}>
                 &times;
             </button>
             {isOpen && ( // this is a state variable to display the following content
-            
                 <div className="steps">
                     <div className="numbers">
                         {/* add classes conditionally */}
