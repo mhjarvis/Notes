@@ -1,21 +1,41 @@
-import viteLogo from "/vite.svg";
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+import { useState } from "react";
 import "./App.css";
 
-function App() {
+export default function App() {
     return (
-        <>
-        <Counter />
-            <div>
-                <a href="https://vitejs.dev" target="_blank">
-                    <img src={viteLogo} className="logo" alt="Vite logo" />
-                </a>
-            </div>
-        </>
+        <div className="App">
+            <Counter />
+        </div>
     );
 }
 
 function Counter() {
-    return <div>Howdy</div>;
+    const [step, setStep] = useState(1);
+    const [count, setCount] = useState(1);
+
+    
+
+    return (
+        <div>
+            <div className="step">
+                <Button innerText="+"></Button>
+                <p>Step: {step}</p>
+                <Button innerText="-"></Button>
+            </div>
+            <div className="count">
+                <Button innerText="+"></Button>
+                <p>Count: {count}</p>
+                <Button innerText="-"></Button>
+            </div>
+            <div>
+                <p>{step} days from today is NEED DATE </p>
+            </div>
+        </div>
+    );
 }
 
-export default App;
+function Button(props) {
+    return <button className="button">{props.innerText}</button>;
+}
