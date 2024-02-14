@@ -12,17 +12,33 @@ export default function App() {
 }
 
 function Counter() {
-    const [step, setStep] = useState(1);
+    const [step, setStep] = useState(3);
     const [count, setCount] = useState(1);
 
-    
+    function handleNextStep() {
+        if (step > 1) setStep(step - 1);
+    }
+    function handlePreviousStep() {
+        if (step < 10) setStep(step + 1);
+    }
+
+    function handleNextCount() {}
+
+    function handlePreviousCount() {}
 
     return (
         <div>
             <div className="step">
-                <Button innerText="+"></Button>
+                <button className="button" onClick={handleNextStep}>-</button>
+                <p>New Step: {step}</p>
+                <button className="button" onClick={handlePreviousStep}>+</button>
+                <Button
+                    innerText="-"
+                    clicker="handleNextStep"
+                    onClick={handleNextStep}
+                ></Button>
                 <p>Step: {step}</p>
-                <Button innerText="-"></Button>
+                <Button innerText="+" onClick={handlePreviousStep}></Button>
             </div>
             <div className="count">
                 <Button innerText="+"></Button>
