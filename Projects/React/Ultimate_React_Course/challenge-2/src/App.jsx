@@ -15,35 +15,40 @@ function Counter() {
     const [step, setStep] = useState(3);
     const [count, setCount] = useState(1);
 
-    function handleNextStep() {
+    // Step variable
+    function handlePreviousStep() {
         if (step > 1) setStep(step - 1);
     }
-    function handlePreviousStep() {
+    function handleNextStep() {
         if (step < 10) setStep(step + 1);
     }
-
-    function handleNextCount() {}
-
-    function handlePreviousCount() {}
+    // Count variable
+    function handleNextCount() {
+        if (count < 10) setCount(count + 1);
+    }
+    function handlePreviousCount() {
+        if (count > 1) setCount(count - 1);
+    }
 
     return (
         <div>
             <div className="step">
-                <button className="button" onClick={handleNextStep}>-</button>
+                <button className="button" onClick={handlePreviousStep}>
+                    -
+                </button>
                 <p>New Step: {step}</p>
-                <button className="button" onClick={handlePreviousStep}>+</button>
-                <Button
-                    innerText="-"
-                    clicker="handleNextStep"
-                    onClick={handleNextStep}
-                ></Button>
-                <p>Step: {step}</p>
-                <Button innerText="+" onClick={handlePreviousStep}></Button>
+                <button className="button" onClick={handleNextStep}>
+                    +
+                </button>
             </div>
             <div className="count">
-                <Button innerText="+"></Button>
+                <button className="button" onClick={handlePreviousCount}>
+                    -
+                </button>
                 <p>Count: {count}</p>
-                <Button innerText="-"></Button>
+                <button className="button" onClick={handleNextCount}>
+                    +
+                </button>
             </div>
             <div>
                 <p>{step} days from today is NEED DATE </p>
@@ -52,6 +57,6 @@ function Counter() {
     );
 }
 
-function Button(props) {
-    return <button className="button">{props.innerText}</button>;
+function Butt(props) {
+    return <button className="button">{props.data}</button>;
 }
