@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
 import "./App.css";
+import Button from "./components/Button";
 
 export default function App() {
     return (
@@ -13,7 +14,7 @@ export default function App() {
 
 function Counter() {
     const [step, setStep] = useState(3);
-    const [count, setCount] = useState(1);
+    const [count, setCount] = useState(3);
 
     // Step variable
     function handlePreviousStep() {
@@ -33,22 +34,14 @@ function Counter() {
     return (
         <div>
             <div className="step">
-                <button className="button" onClick={handlePreviousStep}>
-                    -
-                </button>
+                <Button data="-" clicker={handlePreviousStep}></Button>
                 <p>New Step: {step}</p>
-                <button className="button" onClick={handleNextStep}>
-                    +
-                </button>
+                <Button data="+" clicker={handleNextStep}></Button>
             </div>
             <div className="count">
-                <button className="button" onClick={handlePreviousCount}>
-                    -
-                </button>
+                <Button data="-" clicker={handlePreviousCount}></Button>
                 <p>Count: {count}</p>
-                <button className="button" onClick={handleNextCount}>
-                    +
-                </button>
+                <Button data="+" clicker={handleNextCount}></Button>
             </div>
             <div>
                 <p>{step} days from today is NEED DATE </p>
