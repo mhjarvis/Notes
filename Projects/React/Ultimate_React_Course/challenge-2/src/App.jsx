@@ -56,7 +56,3 @@ function Counter() {
         </div>
     );
 }
-
-function Butt(props) {
-    return <button className="button">{props.data}</button>;
-}
