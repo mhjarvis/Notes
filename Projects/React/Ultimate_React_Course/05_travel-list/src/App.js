@@ -20,6 +20,8 @@ function Logo() {
 }
 
 function Form() {
+
+  // handle submit via the from element
   function handleSubmit(e) {
     e.preventDefault();
     console.log(e)
