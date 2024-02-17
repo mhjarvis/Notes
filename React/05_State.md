@@ -7,10 +7,9 @@
 -   [React - State: A Component's Memory](https://react.dev/learn/state-a-components-memory)
 -   [React - Render and Commit](https://react.dev/learn/render-and-commit)
 -   [Article - React Reconciliation Algorithm](https://medium.com/javarevisited/react-reconciliation-algorithm-86e3e22c1b40)
-- [React - State as a Snapshot](https://react.dev/learn/state-as-a-snapshot)
-- [React - Choosing the State Structure](https://react.dev/learn/choosing-the-state-structure)
-- [React - Sharing State Between Components](https://react.dev/learn/sharing-state-between-components)
-
+-   [React - State as a Snapshot](https://react.dev/learn/state-as-a-snapshot)
+-   [React - Choosing the State Structure](https://react.dev/learn/choosing-the-state-structure)
+-   [React - Sharing State Between Components](https://react.dev/learn/sharing-state-between-components)
 
 Because apps will change over time - whether being changed by a button or updating information received from an API - React provides primitives to help manipulate the state of your apps, making them dynamic.
 
@@ -100,7 +99,7 @@ Some HTML elements maintain their own internal state, such as `input`. When you 
 
 ```jsx
 function CustomInput() {
-    cont [value, setValue] = useState('');
+    cont[(value, setValue)] = useState("");
 
     return (
         <input
@@ -113,3 +112,21 @@ function CustomInput() {
 ```
 
 Here we define our own state using the `useState` hook. We set the `value` prop of the `input` to the state variable and update the state variable on every `onChange` event. Now, when the user types something, React will ensure you have the latest text in `value`.
+
+## Difference between State and Props
+
+State:
+
+-   Internal data, owned by the component.
+-   Component memory
+-   Can be updated by the component itself.
+-   Updating state causes component to re-render
+-   Used to make components interactive
+
+Props:
+
+-   External data, owned by parent component.
+-   Similar to function parameters.
+-   Read-only.
+-   Receiving new props causes component to re-render. Usually when the parent's state has been updated.
+-   used by parent to configure child component ('settings')
