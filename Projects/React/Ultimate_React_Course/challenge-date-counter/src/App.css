@@ -27,3 +27,7 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+.range-counter {
+  display: flex;
+}
