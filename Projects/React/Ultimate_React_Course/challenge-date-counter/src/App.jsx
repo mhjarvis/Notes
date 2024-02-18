@@ -17,11 +17,11 @@ function Counter() {
     const [count, setCount] = useState(0);
     const [range, setRange] = useState(1);
 
-    const date = new Date();
-    date.setDate(date.getDate() + count * range);
+    let date = new Date();
+    date.setDate(date.getDate() + count);
 
     // Step variable
-/*     function handlePreviousStep() {
+    /*     function handlePreviousStep() {
         if (step > 1) {
             setStep(step - 1);
         }
@@ -33,7 +33,7 @@ function Counter() {
     } */
     // Count variable
     function handleNextCount() {
-        setCount(Number(count) + Number(range))
+        setCount(Number(count) + Number(range));
         /* if (count < 10000000) {
             setCount(count);
         } */
@@ -45,8 +45,9 @@ function Counter() {
     }
 
     function handleCountChange(e) {
-        console.log(e)
-        setCount(e)
+        setCount(e);
+        date = new Date();
+        date.setDate(date.getDate() + count);
     }
 
     return (
@@ -75,7 +76,6 @@ function Counter() {
                 <input
                     type="number"
                     value={count}
-                    name="range"
                     min="1"
                     max="10000000"
                     onChange={(e) => handleCountChange(e.target.value)}
