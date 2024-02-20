@@ -61,7 +61,7 @@ function Counter() {
                         min="1"
                         max="10"
                         value={range}
-                        onChange={(e) => setRange(e.target.value)}
+                        onChange={(e) => setRange(Number(e.target.value))}
                     />
                     <p>{range}</p>
                 </div>
@@ -74,11 +74,11 @@ function Counter() {
             <div className="count">
                 <Button data="-" clicker={handlePreviousCount}></Button>
                 <input
-                    type="number"
+                    type="text"
                     value={count}
                     min="1"
                     max="10000000"
-                    onChange={(e) => handleCountChange(e.target.value)}
+                    onChange={(e) => handleCountChange(Number(e.target.value))}
                 />
                 <Button data="+" clicker={handleNextCount}></Button>
             </div>
