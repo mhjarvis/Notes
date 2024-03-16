@@ -44,6 +44,8 @@ console.log(sumZero([-8, -4, -3, 0, 1, 2, 6, 9]));
 // 3. Are there decimals or only real numbers?
 
 function countUniqueValues(arr) {
+    if (arr.length === 0) { return 0 }  // outlier - empty array
+
     let first = 0;
     let second = 1;
 
