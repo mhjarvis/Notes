@@ -1,3 +1,5 @@
+// Solutions using the FREQUENCY COUNTERS Pattern
+
 // Anagram solution for input of two strings
 
 function validAnagram(str1, str2) {
@@ -44,3 +46,25 @@ function validAnagram(str1, str2) {
     // since none are false, they are an anagram
     return true;
 }
+
+// Improvements:
+// 1. You can loop through a string without needing to break it into an array.
+// 2. Use just one object:
+
+let lookup = {};
+
+for (let i = 0; i < str1.length; i++) {
+    let letter = first[i];
+    lookup[letter] ? lookup[letter] += 1 : lookup[letter] = 1;
+}
+
+for (let i = 0; i < str2.length; i++) {
+    let letter = str2[i];
+    if (!lookup[letter]) {
+        return false;
+    } else {
+        lookup[letter] -= 1;
+    }
+}
+
+return true;
