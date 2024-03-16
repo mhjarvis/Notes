@@ -64,3 +64,5 @@ function countUniqueValues(arr) {
 console.log(countUniqueValues([1, 1, 1, 1, 1, 1, 2])); // 2
 console.log(countUniqueValues([1, 2, 3, 4, 5, 6, 7, 7, 8])); // 8
 console.log(countUniqueValues([1, 1, 2, 2, 3, 4, 5, 5, 5])); // 5
+
+// We could instead use a for loop using the same principle.
