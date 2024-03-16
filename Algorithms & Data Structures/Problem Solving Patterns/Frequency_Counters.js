@@ -1,6 +1,6 @@
 // Solutions using the FREQUENCY COUNTERS Pattern
 
-// Anagram solution for input of two strings
+// 1. Anagram solution for input of two strings
 
 function validAnagram(str1, str2) {
     // edge case
@@ -55,7 +55,7 @@ let lookup = {};
 
 for (let i = 0; i < str1.length; i++) {
     let letter = first[i];
-    lookup[letter] ? lookup[letter] += 1 : lookup[letter] = 1;
+    lookup[letter] ? (lookup[letter] += 1) : (lookup[letter] = 1);
 }
 
 for (let i = 0; i < str2.length; i++) {
@@ -68,3 +68,47 @@ for (let i = 0; i < str2.length; i++) {
 }
 
 return true;
+
+// 2. Solution for Frequency Counter for a Number
+
+// Write a function called sameFrequency. Given two positive integers,
+// find out if the two numbers have the same frequency of digits.
+// Your solution MUST have the following complexities: Time: O(N)
+
+function sameFrequency(x, y) {
+    let obj = {};
+    x = String(x);
+    y = String(y);
+
+    // go through first number and add to abject
+    for (let i = 0; i < x.length; i++) {
+        let temp = x[i];
+        // test if the value is already in teh obj
+        obj[temp] ? (obj[temp] += 1) : (obj[temp] = 1);
+    }
+
+    for (let i = 0; i < y.length; i++) {
+        let temp = y[i];
+        if (obj[temp] && obj[temp] !== 0) {
+            obj[temp] -= 1;
+        } else {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+console.log(sameFrequency(182, 281)); // true
+console.log(sameFrequency(34, 14)); // false
+console.log(sameFrequency(3589578, 5879385)); // true
+console.log(sameFrequency(22, 222)); // false
+
+/* 
+This would allow us to split a number, and map the string back to digits:
+
+var num = 123456;
+var digits = num.toString().split('');
+var realDigits = digits.map(Number)
+
+*/
