@@ -66,3 +66,66 @@ console.log(countUniqueValues([1, 2, 3, 4, 5, 6, 7, 7, 8])); // 8
 console.log(countUniqueValues([1, 1, 2, 2, 3, 4, 5, 5, 5])); // 5
 
 // We could instead use a for loop using the same principle.
+
+// 3. AVERAGE PAIR
+
+// Write a function called averagePair. Given a sorted array of integers and a target average,
+// determine if there is a pair of values in the array where the average of the pair equals
+// the target average. There may be more than one pair that matches the average target.
+
+// Bonus Constraints:
+// Time: O(N)
+// Space: O(1)
+
+function averagePair(arr, target) {
+    let last = arr.length - 1;
+
+    for (let i = 0; i < last; i++) {
+        let avg = (arr[i] + arr[last]) / 2;
+        if (avg === target) {
+            return true;
+        } else if (avg < target) {
+            continue;
+        } else {
+            last--;
+        }
+    }
+    return false;
+}
+
+console.log(averagePair([1,2,3],2.5)) // true
+console.log(averagePair([1,3,3,5,6,7,10,12,19],8)) // true
+console.log(averagePair([-1,0,3,4,5,6], 4.1)) // false
+console.log(averagePair([],4)) // false
+
+// 4. IS SUBSEQUENCE
+
+// Write a function called isSubsequence which takes in two strings and checks whether the characters
+// in the first string form a subsequence of the characters in the second string. In other words, the function
+// should check whether the characters in the first string appear somewhere in the second string, without their
+// order changing.
+
+// Your solution MUST have AT LEAST the following complexities:
+// Time Complexity - O(N + M)
+// Space Complexity - O(1)
+
+function isSubsequence(str1, str2) {
+    index = 0;
+    
+    for (let i = 0; i < str1.length; i++) {
+        if (index >= str2.length - 1 && str1[i] !== str2[index]) { return false };
+        
+        if (str1[i] === str2[index]) {
+            index++;
+            continue;
+        } else {
+            index++;
+        }
+    }
+    return true;
+}
+
+console.log(isSubsequence('hello', 'hello world')) // true
+console.log(isSubsequence('sing', 'sting')); // true
+console.log(isSubsequence('abc', 'abracadabra')); // true
+console.log(isSubsequence('abc', 'acb')); // false (order matters)
