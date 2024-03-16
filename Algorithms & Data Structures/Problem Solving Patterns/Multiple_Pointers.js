@@ -1,5 +1,7 @@
 // Solutions using MULTIPLE POINTERS Pattern
 
+// 1. ZERO SUM PROBLEM
+
 // This pattern uses two pointers (on an array or string, etc.) to move
 // through that element in lieu of using nested loops. 
 
@@ -27,7 +29,6 @@ function sumZero(arr) {
     //return undefined;   // undefined if no match
 }
 
-
 console.log(sumZero([-8, -4, -3, -1, 0, 2, 3, 4, 6, 7, 8, 9, 10]))
-
 console.log(sumZero([-8, -4, -3, 0, 1, 2, 6, 9]))
+
