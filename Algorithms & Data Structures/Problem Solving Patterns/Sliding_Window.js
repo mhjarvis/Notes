@@ -154,3 +154,27 @@ console.log(minSubArrayLen([1,4,16,22,5,7,8,9,10],95)) // 0
 
 // This is not an optimized solution
 
+// Slightly more optimized solution:
+
+function minSubArrayLen(arr, num) {
+    let sum = arr[0];
+    let trailing = 0;
+    let leading = 0;
+    let subArrayCount = 1;
+    let lowestCount = Infinity;
+    
+    while (leading < arr.length) {
+        if (subArrayCount < lowestCount && sum >= num) { lowestCount = subArrayCount };
+        if (leading === arr.length - 1 && lowestCount === Infinity) { return 0 };
+        if (sum >= num) {
+            sum -= arr[trailing];
+            trailing++;
+            subArrayCount--;
+        } else {
+            leading++;
+            sum += arr[leading];
+            subArrayCount++;
+        }
+    }
+    return lowestCount;
+}
