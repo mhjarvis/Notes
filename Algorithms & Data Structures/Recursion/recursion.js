@@ -15,7 +15,7 @@ console.log(power(2,0)) // 1
 console.log(power(2,2)) // 4
 console.log(power(2,4)) // 16
 
-// 1. FACTORIAL
+// 2. FACTORIAL
 
 // Write a function factorial which accepts a number and 
 // returns the factorial of that number. A factorial is the 
@@ -33,4 +33,14 @@ function factorial(num){
  console.log(factorial(4)) // 24
  console.log(factorial(7)) // 5040
  
- 
+// 3. PRODUCT OF ARRAY
+// Write a function called productOfArray which takes in an array
+// of numbers and returns the product of them all.
+
+function productOfArray(arr) {
+    if (arr.length === 0) {return 1};
+    return arr[0] * productOfArray(arr.slice(1))
+}
+
+console.log(productOfArray([1,2,3])) // 6
+console.log(productOfArray([1,2,3,10])) // 60
