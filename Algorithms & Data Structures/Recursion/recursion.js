@@ -79,3 +79,25 @@ console.log(fib(4)) // 3
 console.log(fib(10)) // 55
 console.log(fib(28)) // 317811
 console.log(fib(35)) // 9227465
+
+// 5. REVERSE STRING
+
+// Write a recursive function called reverse which accepts
+// a string and returns a new string in reverse.
+
+function reverse(str){
+    let s = '';
+
+    function recur(x) {
+        if (x.length === 0) return
+        s += x[x.length - 1];
+        return recur(x.slice(0, x.length - 1))
+    }
+    
+    recur(str)
+    
+    return s
+}
+
+console.log(reverse('awesome')) // 'emosewa'
+console.log(reverse('rithmschool')) // 'loohcsmhtir'
