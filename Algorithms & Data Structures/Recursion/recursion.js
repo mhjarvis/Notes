@@ -262,3 +262,5 @@ var obj2 = {
 
 console.log(nestedEvenSum(obj1)); // 6
 console.log(nestedEvenSum(obj2)); // 10
+
+// 12. 
