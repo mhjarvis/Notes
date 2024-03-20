@@ -144,3 +144,27 @@ function someRecursive(arr, func){
 }
 
 // 9. FLATTEN ARRAY Solution
+
+function flatten(arr){
+    let result = [];
+    
+    function helper(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (typeof arr[i] === 'object') {
+                helper(arr[i])
+            } else {
+                result.push(arr[i])
+            }
+        }
+    }
+    helper(arr);
+    
+    return result;
+}
+
+console.log(flatten([1, 2, 3]))
+console.log(flatten([1, 4, [5], [6]]))
+console.log(flatten([1, 2, 3, [4, 5] ])) // [1, 2, 3, 4, 5]
+console.log(flatten([1, [2, [3, 4], [[5]]]])) // [1, 2, 3, 4, 5]
+console.log(flatten([[1],[2],[3]])) // [1,2,3]
+console.log(flatten([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]])) // [1,2,3]
