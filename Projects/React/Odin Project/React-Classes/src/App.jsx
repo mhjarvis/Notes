@@ -38,6 +38,11 @@ class ClassInput extends React.Component {
         }));
     }
 
+    deleteElement(e) {
+        console.log(e)
+        
+    }
+
     render() {
         return (
             <section>
@@ -54,8 +59,13 @@ class ClassInput extends React.Component {
                 </form>
                 <h4>All the tasks!</h4>
                 <ul>
-                    {this.state.todos.map((todo) => (
-                        <li key={todo}>{todo}</li>
+                    {this.state.todos.map((todo, index) => (
+                        <span key={index}>
+                            <li>{index}</li>
+                            <button onClick={this.deleteElement}>
+                                Delete this
+                            </button>
+                        </span>
                     ))}
                 </ul>
             </section>
