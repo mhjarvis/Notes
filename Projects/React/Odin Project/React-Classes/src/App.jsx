@@ -5,26 +5,65 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-    return (
-        <div>hello</div>
-    )
+    return <ClassInput name="John Wick" />;
 }
 
 class ClassInput extends React.Component {
-    
+    // props that are passed into this component get passed into the classes contructor
+    constructor(props) {
+        super(props);
+
+        // state is initialized in the constructor
+        this.state = {
+            todos: [],
+            inputVal: "",
+        };
+
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleInputChange(e) {
+        this.setState((state) => ({
+            ...state,
+            inputVal: e.target.value,
+        }));
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        this.setState((state) => ({
+            todos: state.todos.concat(state.inputVal),
+            inputVal: "",
+        }));
+    }
+
+    render() {
+        return (
+            <section>
+                <h3>{this.props.name}</h3>
+                <form onSubmit={this.handleSubmit}>
+                    <label htmlFor="task-entry">Enter a task: </label>
+                    <input
+                        type="text"
+                        name="task-entry"
+                        value={this.state.inputVal}
+                        onChange={this.handleInputChange}
+                    />
+                    <button type="submit">Submit</button>
+                </form>
+                <h4>All the tasks!</h4>
+                <ul>
+                    {this.state.todos.map((todo) => (
+                        <li key={todo}>{todo}</li>
+                    ))}
+                </ul>
+            </section>
+        );
+    }
 }
 
-
 export default App;
-
-
-
-
-
-
-
-
-
 
 /* const FunctionalInput = ({ name }) => {
     const [todos, setTodos] = useState([
