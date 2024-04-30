@@ -21,6 +21,7 @@ class ClassInput extends React.Component {
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.deleteElement = this.deleteElement.bind(this);
     }
 
     handleInputChange(e) {
@@ -39,8 +40,15 @@ class ClassInput extends React.Component {
     }
 
     deleteElement(e) {
-        console.log(e)
-        
+        const index = e.target.value;
+        console.log(index)
+        let arr = [...this.state.todos].slice(index, 0);
+        console.log(arr);
+
+        /*         this.setState((state) => ({
+            todos: state.todos.slice(index, 1),
+            inputVal: "",
+        })); */
     }
 
     render() {
@@ -60,12 +68,16 @@ class ClassInput extends React.Component {
                 <h4>All the tasks!</h4>
                 <ul>
                     {this.state.todos.map((todo, index) => (
-                        <span key={index}>
-                            <li>{index}</li>
-                            <button onClick={this.deleteElement}>
+                        <div key={index}>
+                            <li>{todo}</li>
+                            <button
+                                value={index}
+                                type="submit"
+                                onClick={this.deleteElement}
+                            >
                                 Delete this
                             </button>
-                        </span>
+                        </div>
                     ))}
                 </ul>
             </section>
