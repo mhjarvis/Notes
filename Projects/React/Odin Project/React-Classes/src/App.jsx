@@ -19,7 +19,7 @@ class Count extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="count-var">
                 <p>Number of items: {this.props.elCount}</p>
             </div>
         );
@@ -85,7 +85,7 @@ class ClassInput extends React.Component {
                 <Count elCount={this.state.todos.length} />
                 <ul>
                     {this.state.todos.map((todo, index) => (
-                        <div key={index}>
+                        <div key={index} className="todos-container">
                             <li>{todo}</li>
                             <button
                                 value={index}
