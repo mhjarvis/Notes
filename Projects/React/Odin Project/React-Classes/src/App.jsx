@@ -5,7 +5,25 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-    return <ClassInput name="John Wick" />;
+    return (
+        <>
+            <ClassInput name="John Wick" />
+        </>
+    );
+}
+
+class Count extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div>
+                <p>Number of items: {this.props.elCount}</p>
+            </div>
+        );
+    }
 }
 
 class ClassInput extends React.Component {
@@ -46,7 +64,7 @@ class ClassInput extends React.Component {
         this.setState((state) => ({
             todos: arr,
             inputVal: state.inputVal,
-        }))
+        }));
     }
 
     render() {
@@ -64,6 +82,7 @@ class ClassInput extends React.Component {
                     <button type="submit">Submit</button>
                 </form>
                 <h4>All the tasks!</h4>
+                <Count elCount={this.state.todos.length} />
                 <ul>
                     {this.state.todos.map((todo, index) => (
                         <div key={index}>
