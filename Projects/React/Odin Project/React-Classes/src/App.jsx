@@ -41,14 +41,12 @@ class ClassInput extends React.Component {
 
     deleteElement(e) {
         const index = e.target.value;
-        console.log(index)
-        let arr = [...this.state.todos].slice(index, 0);
-        console.log(arr);
-
-        /*         this.setState((state) => ({
-            todos: state.todos.slice(index, 1),
-            inputVal: "",
-        })); */
+        let arr = [...this.state.todos];
+        arr.splice(index, 1);
+        this.setState((state) => ({
+            todos: arr,
+            inputVal: state.inputVal,
+        }))
     }
 
     render() {
