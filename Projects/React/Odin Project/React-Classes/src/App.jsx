@@ -40,6 +40,7 @@ class ClassInput extends React.Component {
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.deleteElement = this.deleteElement.bind(this);
+        this.editElement = this.editElement.bind(this);
     }
 
     handleInputChange(e) {
@@ -67,6 +68,10 @@ class ClassInput extends React.Component {
         }));
     }
 
+    editElement(e) {
+        console.log(e, this.state)
+    }
+
     render() {
         return (
             <section>
@@ -87,13 +92,21 @@ class ClassInput extends React.Component {
                     {this.state.todos.map((todo, index) => (
                         <div key={index} className="todos-container">
                             <li>{todo}</li>
-                            <button
-                                value={index}
-                                type="submit"
-                                onClick={this.deleteElement}
-                            >
-                                Delete this
-                            </button>
+                            <div>
+                                <button
+                                    value={index}
+                                    onClick={this.editElement}
+                                >
+                                    Edit
+                                </button>
+                                <button
+                                    value={index}
+                                    type="submit"
+                                    onClick={this.deleteElement}
+                                >
+                                    X
+                                </button>
+                            </div>
                         </div>
                     ))}
                 </ul>
