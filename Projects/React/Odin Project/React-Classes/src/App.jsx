@@ -34,6 +34,7 @@ class ClassInput extends React.Component {
         // state is initialized in the constructor
         this.state = {
             todos: [],
+            editIndex: null,
             inputVal: "",
         };
 
@@ -69,7 +70,10 @@ class ClassInput extends React.Component {
     }
 
     editElement(index) {
-        console.log(index)
+        this.setState((state) => ({
+            ...state,
+            editIndex: index,
+        }))
     }
 
     render() {
