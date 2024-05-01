@@ -68,8 +68,8 @@ class ClassInput extends React.Component {
         }));
     }
 
-    editElement(e) {
-        console.log(e, this.state)
+    editElement(index) {
+        console.log(index)
     }
 
     render() {
@@ -95,7 +95,7 @@ class ClassInput extends React.Component {
                             <div>
                                 <button
                                     value={index}
-                                    onClick={this.editElement}
+                                    onClick={() => this.editElement(index)}
                                 >
                                     Edit
                                 </button>
