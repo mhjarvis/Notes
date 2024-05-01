@@ -73,7 +73,7 @@ class ClassInput extends React.Component {
         this.setState((state) => ({
             ...state,
             editIndex: index,
-        }))
+        }));
     }
 
     render() {
@@ -93,26 +93,30 @@ class ClassInput extends React.Component {
                 <h4>All the tasks!</h4>
                 <Count elCount={this.state.todos.length} />
                 <ul>
-                    {this.state.todos.map((todo, index) => (
-                        <div key={index} className="todos-container">
-                            <li>{todo}</li>
-                            <div>
-                                <button
-                                    value={index}
-                                    onClick={() => this.editElement(index)}
-                                >
-                                    Edit
-                                </button>
-                                <button
-                                    value={index}
-                                    type="submit"
-                                    onClick={this.deleteElement}
-                                >
-                                    X
-                                </button>
+                    {this.state.todos.map((todo, index) =>
+                        this.state.editIndex === index ? (
+                            <div key={index}>poop</div>
+                        ) : (
+                            <div key={index} className="todos-container">
+                                <li>{todo}</li>
+                                <div>
+                                    <button
+                                        value={index}
+                                        onClick={() => this.editElement(index)}
+                                    >
+                                        Edit
+                                    </button>
+                                    <button
+                                        value={index}
+                                        type="submit"
+                                        onClick={this.deleteElement}
+                                    >
+                                        X
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        )
+                    )}
                 </ul>
             </section>
         );
