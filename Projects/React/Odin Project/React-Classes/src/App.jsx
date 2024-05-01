@@ -76,6 +76,22 @@ class ClassInput extends React.Component {
         }));
     }
 
+    resubmitElement(index) {
+        this.setState((state) => ({
+            ...state,
+            editIndex: null,
+        }))
+    }
+
+    handleEditChange(e, index) {
+        let arr = [...this.state.todos]
+        arr[index] = event.target.value;
+        this.setState((state) => ({
+            ...state,
+            todos: arr, 
+        }))
+    }
+
     render() {
         return (
             <section>
@@ -95,7 +111,32 @@ class ClassInput extends React.Component {
                 <ul>
                     {this.state.todos.map((todo, index) =>
                         this.state.editIndex === index ? (
-                            <div key={index}>poop</div>
+                            <div key={index} className="todos-container">
+                                <input
+                                    type="text"
+                                    name="task-entry"
+                                    value={this.state.todos[index]}
+                                    onChange={() => this.handleEditChange(event, index)}
+                                >
+                                </input>
+                                <div>
+                                    <button
+                                        value={index}
+                                        onClick={() =>
+                                            this.resubmitElement(index)
+                                        }
+                                    >
+                                        Resubmit
+                                    </button>
+                                    <button
+                                        value={index}
+                                        type="submit"
+                                        onClick={this.deleteElement}
+                                    >
+                                        X
+                                    </button>
+                                </div>
+                            </div>
                         ) : (
                             <div key={index} className="todos-container">
                                 <li>{todo}</li>
