@@ -1,6 +1,16 @@
+export default function App() {
+    
+    const styles = {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
+        width: "100vw",
+    };
 
-
-
-const App = () => <h1>Our First Test</h1>;
-
-export default App;
+    return (
+        <div style={styles}>
+            <h1>Our First App</h1>
+        </div>
+    );
+}
