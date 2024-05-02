@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`App component > renders magnificent monkeys 1`] = `
+<div>
+  <div
+    style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; width: 100vw;"
+  >
+    <button>
+      Click Me
+    </button>
+    <h1>
+      Magnificent Monkeys
+    </h1>
+  </div>
+</div>
+`;
