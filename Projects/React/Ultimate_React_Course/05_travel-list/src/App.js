@@ -27,6 +27,8 @@ export default function App() {
         );
     }
 
+    const numItems = items.length;
+
     return (
         <div className="app">
             <Logo />
@@ -36,7 +38,7 @@ export default function App() {
                 onDeleteItem={handleDeleteItem}
                 onToggleItems={handleToggleItem}
             />
-            <Stats />
+            <Stats numItems={numItems} />
         </div>
     );
 }
@@ -126,10 +128,11 @@ function Item({ item, onDeleteItem, onToggleItems }) {
     );
 }
 
-function Stats() {
+function Stats({ numItems }) {
     return (
         <footer className="stats">
-            You have X items on your list, and you already packed X (X%)
+            You have {numItems} items on your list, and you already packed X
+            (X%)
         </footer>
     );
 }
