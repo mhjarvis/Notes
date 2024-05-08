@@ -27,8 +27,6 @@ export default function App() {
         );
     }
 
-    const numItems = items.length;
-
     return (
         <div className="app">
             <Logo />
@@ -38,7 +36,7 @@ export default function App() {
                 onDeleteItem={handleDeleteItem}
                 onToggleItems={handleToggleItem}
             />
-            <Stats numItems={numItems} />
+            <Stats items={items} />
         </div>
     );
 }
@@ -128,7 +126,9 @@ function Item({ item, onDeleteItem, onToggleItems }) {
     );
 }
 
-function Stats({ numItems }) {
+function Stats({ items }) {
+    const numItems = items.length;
+
     return (
         <footer className="stats">
             You have {numItems} items on your list, and you already packed X
