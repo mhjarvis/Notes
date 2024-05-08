@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
+import Logo from "./Logo";
 
 const initialItems = [
     { id: 1, description: "Passports", quantity: 2, packed: false },
@@ -48,10 +49,6 @@ export default function App() {
             <Stats items={items} />
         </div>
     );
-}
-
-function Logo() {
-    return <h1>🤮 Far Away</h1>;
 }
 
 function Form({ onAddItems }) {
