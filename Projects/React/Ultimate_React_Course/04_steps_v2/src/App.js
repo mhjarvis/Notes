@@ -17,14 +17,17 @@ export default function App() {
 
     function handleNext() {
         if (step < 3) {
-            setStep((s) => s + 1);      // 's' = step
+            setStep((s) => s + 1); // 's' = step
             // setStep((s) => s + 1);      // jump forward twice
         }
     }
 
     return (
         <>
-            <button className="close" onClick={() => setIsOpen((isOpen) => !isOpen)}>
+            <button
+                className="close"
+                onClick={() => setIsOpen((isOpen) => !isOpen)}
+            >
                 &times;
             </button>
             {isOpen && ( // this is a state variable to display the following content
@@ -41,21 +44,34 @@ export default function App() {
                     </p>
 
                     <div className="buttons">
-                        <button
-                            style={{ backgroundColor: "#7950f2", color: "fff" }}
+                        <Button
+                            bgColor="#7950f2"
+                            textColor="#fff"
                             onClick={handlePrevious}
                         >
-                            Previous
-                        </button>
-                        <button
-                            style={{ backgroundColor: "#7950f2", color: "fff" }}
+                            <span>👈 Previous</span>
+                        </Button>
+                        <Button
+                            bgColor="#7950f2"
+                            textColor="#fff"
                             onClick={handleNext}
                         >
-                            Next
-                        </button>
+                            Next <span>👉</span>
+                        </Button>
                     </div>
                 </div>
             )}
         </>
+    );
+}
+
+function Button({ textColor, bgColor, onClick, children }) {
+    return (
+        <button
+            style={{ backgroundColor: bgColor, color: textColor }}
+            onClick={onClick}
+        >
+            {children}
+        </button>
     );
 }
