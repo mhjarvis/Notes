@@ -41,12 +41,12 @@
     color: #888;
 }
 
-.bill-input-container {
+.container {
     display: flex;
     align-items: center;
 }
 
-.bill-input-container > input {
+.input {
     height: 1rem;
     margin-left: 10px;
 }

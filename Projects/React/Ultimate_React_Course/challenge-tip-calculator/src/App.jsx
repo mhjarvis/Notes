@@ -6,32 +6,42 @@ function App() {
     return (
         <>
             <BillInput />
-            <ServiceInput text="How did you like the service? " />
-            <ServiceInput text="How did your friend like the serivce? " />
+            <ServiceInput text="How did you like the service? ">
+                <input className="input" type="text"></input>
+            </ServiceInput>
+            <ServiceInput text="How did your friend like the serivce? ">
+                <input className="input" type="text"></input>
+            </ServiceInput>
             <Output />
+            <Button />
         </>
     );
 }
 
 function BillInput() {
     return (
-        <div className="bill-input-container">
+        <div className="container">
             <p>How much was the bill? </p>
-            <input type="text" />
+            <input className="input" type="text" />
         </div>
     );
 }
 
-function ServiceInput({ text }) {
+function ServiceInput({ text, children }) {
     return (
-        <div className="service-input-container">
+        <div className="container">
             <p>{text}</p>
+            {children}
         </div>
     );
 }
 
 function Output() {
     return <p>`You pay $$ ($$ + $$ tip)`</p>;
+}
+
+function Button() {
+    return <button>Reset</button>;
 }
 
 export default App;
