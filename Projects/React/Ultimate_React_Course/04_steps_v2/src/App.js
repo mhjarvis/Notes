@@ -49,6 +49,7 @@ export default function App() {
                         >
                             <span>👈 Previous</span>
                         </Button>
+
                         <Button
                             bgColor="#7950f2"
                             textColor="#fff"
