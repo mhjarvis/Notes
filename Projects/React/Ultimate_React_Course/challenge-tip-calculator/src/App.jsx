@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+
 import "./App.css";
 
 function App() {
@@ -6,6 +8,7 @@ function App() {
             <BillInput />
             <ServiceInput text="How did you like the service? " />
             <ServiceInput text="How did your friend like the serivce? " />
+            <Output />
         </>
     );
 }
@@ -25,6 +28,10 @@ function ServiceInput({ text }) {
             <p>{text}</p>
         </div>
     );
+}
+
+function Output() {
+    return <p>`You pay $$ ($$ + $$ tip)`</p>;
 }
 
 export default App;
