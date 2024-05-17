@@ -18,14 +18,12 @@ function App() {
     return (
         <>
             <BillInput bill={bill} setBill={setBill} />
-            <ServiceInput
-                text="How did you like the service? "
-                setService={setService}
-            />
-            <ServiceInput
-                text="how did your friend like the service? "
-                setService={setFriendsService}
-            />
+            <ServiceInput setService={setService}>
+                How did you like the service?{" "}
+            </ServiceInput>
+            <ServiceInput setService={setFriendsService}>
+                how did your friend like the service?{" "}
+            </ServiceInput>
 
             <Output
                 bill={bill}
@@ -55,14 +53,14 @@ function BillInput({ bill, setBill }) {
     );
 }
 
-function ServiceInput({ text, setService }) {
+function ServiceInput({ children, setService }) {
     function updateService(e) {
         setService(Number(e.target.value));
         console.log(e.target.value);
     }
     return (
         <div className="container">
-            <p>{text}</p>
+            <p>{children}</p>
             <select
                 className="input"
                 type="picklist"
