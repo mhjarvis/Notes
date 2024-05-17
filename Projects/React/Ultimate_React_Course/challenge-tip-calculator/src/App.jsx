@@ -1,11 +1,14 @@
 /* eslint-disable react/prop-types */
 
+import { useState } from "react";
 import "./App.css";
 
 function App() {
+    const [bill, setBill] = useState(0);
+
     return (
         <>
-            <BillInput />
+            <BillInput bill={bill} setBill={setBill} />
             <ServiceInput text="How did you like the service? ">
                 <input className="input" type="text"></input>
             </ServiceInput>
@@ -18,11 +21,20 @@ function App() {
     );
 }
 
-function BillInput() {
+function BillInput({ bill, setBill }) {
+    function updateBillInput(e) {
+        setBill(e.target.value);
+    }
+
     return (
         <div className="container">
             <p>How much was the bill? </p>
-            <input className="input" type="text" />
+            <input
+                className="input"
+                type="text"
+                value={bill}
+                onChange={() => updateBillInput(event)}
+            />
         </div>
     );
 }
