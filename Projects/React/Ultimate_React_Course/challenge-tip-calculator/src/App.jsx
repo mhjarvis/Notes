@@ -6,18 +6,28 @@ import "./App.css";
 
 function App() {
     const [bill, setBill] = useState(0);
-    const [service, setService] = useState("It was good (10%)");
+    const [service, setService] = useState(null);
 
     function resetAll() {
         setBill(0);
+        setService(null);
     }
 
     return (
         <>
             <BillInput bill={bill} setBill={setBill} />
-            <ServiceInput text="How did you like the service? " />
-            <ServiceInput text="how did your friend like the service? " />
-            <Output bill={bill} />
+            <ServiceInput
+                text="How did you like the service? "
+                service={service}
+                setService={setService}
+            />
+            <ServiceInput
+                text="how did your friend like the service? "
+                service={service}
+                setService={setService}
+            />
+
+            <Output bill={bill} service={service} />
             <Button resetAll={resetAll} />
         </>
     );
@@ -41,13 +51,13 @@ function BillInput({ bill, setBill }) {
     );
 }
 
-function ServiceInput({ text }) {
+function ServiceInput({ text, service, setService }) {
     return (
         <div className="container">
             <p>{text}</p>
             <select className="input" type="picklist">
                 <option value="0">Dissatisfied (0%)</option>
-                <option value="5">It was okay</option>
+                <option value="5">It was okay (5%)</option>
                 <option value="10">It was good (10%)</option>
                 <option value="20">It was Amazing! (20%)</option>
             </select>
@@ -55,8 +65,12 @@ function ServiceInput({ text }) {
     );
 }
 
-function Output({ bill }) {
-    return <p>`You pay $$ ({bill} + $$ tip)`</p>;
+function Output({ bill, service }) {
+    return (
+        <p>
+            `You pay $$ ({bill} + {service * bill} tip)`
+        </p>
+    );
 }
 
 function Button({ resetAll }) {
