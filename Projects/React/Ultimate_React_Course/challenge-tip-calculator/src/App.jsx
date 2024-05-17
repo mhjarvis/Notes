@@ -6,11 +6,12 @@ import "./App.css";
 
 function App() {
     const [bill, setBill] = useState(0);
-    const [service, setService] = useState(null);
+    const [service, setService] = useState(0);
+    const [friendsService, setFriendsService] = useState(0);
 
     function resetAll() {
         setBill(0);
-        setService(null);
+        setService(0);
     }
 
     return (
@@ -35,7 +36,7 @@ function App() {
 
 function BillInput({ bill, setBill }) {
     function updateBillInput(e) {
-        setBill(e.target.value);
+        setBill(Number(e.target.value));
     }
 
     return (
@@ -43,7 +44,7 @@ function BillInput({ bill, setBill }) {
             <p>How much was the bill? </p>
             <input
                 className="input"
-                type="text"
+                type="number"
                 value={bill}
                 onChange={() => updateBillInput(event)}
             />
@@ -52,14 +53,22 @@ function BillInput({ bill, setBill }) {
 }
 
 function ServiceInput({ text, service, setService }) {
+    function updateService(e) {
+        setService(Number(e.target.value));
+        console.log(e.target.value);
+    }
     return (
         <div className="container">
             <p>{text}</p>
-            <select className="input" type="picklist">
+            <select
+                className="input"
+                type="picklist"
+                onChange={() => updateService(event)}
+            >
                 <option value="0">Dissatisfied (0%)</option>
-                <option value="5">It was okay (5%)</option>
-                <option value="10">It was good (10%)</option>
-                <option value="20">It was Amazing! (20%)</option>
+                <option value=".05">It was okay (5%)</option>
+                <option value=".1">It was good (10%)</option>
+                <option value=".20">It was Amazing! (20%)</option>
             </select>
         </div>
     );
@@ -68,7 +77,8 @@ function ServiceInput({ text, service, setService }) {
 function Output({ bill, service }) {
     return (
         <p>
-            `You pay $$ ({bill} + {service * bill} tip)`
+            You pay ${bill + service * bill} (${bill} bill + ${service * bill}{" "}
+            tip)
         </p>
     );
 }
