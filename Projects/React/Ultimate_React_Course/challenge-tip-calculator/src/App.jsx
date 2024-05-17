@@ -12,6 +12,7 @@ function App() {
     function resetAll() {
         setBill(0);
         setService(0);
+        setFriendsService(0);
     }
 
     return (
