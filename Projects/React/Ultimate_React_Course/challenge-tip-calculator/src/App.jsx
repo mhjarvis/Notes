@@ -20,16 +20,18 @@ function App() {
             <BillInput bill={bill} setBill={setBill} />
             <ServiceInput
                 text="How did you like the service? "
-                service={service}
                 setService={setService}
             />
             <ServiceInput
                 text="how did your friend like the service? "
-                service={service}
-                setService={setService}
+                setService={setFriendsService}
             />
 
-            <Output bill={bill} service={service} />
+            <Output
+                bill={bill}
+                service={service}
+                friendsService={friendsService}
+            />
             <Button resetAll={resetAll} />
         </>
     );
@@ -53,7 +55,7 @@ function BillInput({ bill, setBill }) {
     );
 }
 
-function ServiceInput({ text, service, setService }) {
+function ServiceInput({ text, setService }) {
     function updateService(e) {
         setService(Number(e.target.value));
         console.log(e.target.value);
@@ -75,11 +77,12 @@ function ServiceInput({ text, service, setService }) {
     );
 }
 
-function Output({ bill, service }) {
+function Output({ bill, service, friendsService }) {
+    const servicePercent = ((service + friendsService) / 2) * bill;
+    const billTotal = servicePercent + bill;
     return (
         <p>
-            You pay ${bill + service * bill} (${bill} bill + ${service * bill}{" "}
-            tip)
+            You pay ${billTotal} (${bill} bill + ${servicePercent} tip)
         </p>
     );
 }
