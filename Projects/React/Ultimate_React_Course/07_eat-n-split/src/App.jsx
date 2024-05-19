@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 
 import { useState } from "react";
@@ -24,8 +25,28 @@ const initialFriends = [
     },
 ];
 
-function App() {
-    return <div>howdy</div>;
+export default function App() {
+    return (
+        <div className="app">
+            <div className="sidebar">
+                <FriendsList />
+            </div>
+        </div>
+    );
 }
 
-export default App;
+function FriendsList() {
+    const friends = initialFriends;
+
+    return (
+        <ul>
+            {friends.map((friend) => (
+                <Friend friend={friend} key={friend.id} />
+            ))}
+        </ul>
+    );
+}
+
+function Friend({ friend }) {
+    return <li>{friend.name}</li>;
+}
