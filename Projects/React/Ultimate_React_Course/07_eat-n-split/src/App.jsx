@@ -43,6 +43,7 @@ export default function App() {
 
     function handleAddFriend(friend) {
         setFriends((friends) => [...friends, friend]);
+        setShowAddFriend(false);
     }
     return (
         <div className="app">
@@ -91,7 +92,7 @@ function Friend({ friend }) {
     );
 }
 
-function FormAddFriend() {
+function FormAddFriend({ onAddFriend }) {
     const [name, setName] = useState("");
     const [image, setImage] = useState("https://i.pravatar.cc/48?u=499476");
 
@@ -108,6 +109,8 @@ function FormAddFriend() {
             image: `${image}?=${id}`,
             balance: 0,
         };
+
+        onAddFriend(newFriend);
 
         setName("");
         setImage("https://i.pravatar.cc/48");
