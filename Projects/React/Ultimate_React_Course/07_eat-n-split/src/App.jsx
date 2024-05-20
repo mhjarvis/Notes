@@ -30,6 +30,7 @@ export default function App() {
         <div className="app">
             <div className="sidebar">
                 <FriendsList />
+                <FriendsList />
             </div>
         </div>
     );
