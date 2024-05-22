@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 /* eslint-disable react/prop-types */
 const containerStyle = {
     display: "flex",
@@ -15,6 +17,8 @@ const textStyle = {
 };
 
 export default function StarRating({ maxRating = 5 }) {
+    const [rating, setRating] = useState(0);
+
     return (
         <div style={containerStyle}>
             <div style={starContainerStyle}>
@@ -22,7 +26,7 @@ export default function StarRating({ maxRating = 5 }) {
                     <Star key={i} />
                 ))}
             </div>
-            <p style={textStyle}>10</p>
+            <p style={textStyle}>{rating || ""}</p>
         </div>
     );
 }
