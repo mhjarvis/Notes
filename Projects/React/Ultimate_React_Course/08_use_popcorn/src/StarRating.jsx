@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 /* eslint-disable react/prop-types */
 const containerStyle = {
@@ -9,6 +10,11 @@ const containerStyle = {
 
 const starContainerStyle = {
     display: "flex",
+};
+
+// USE PROPTYPING TO SPECIFY WHAT TYPE A PROP SHOULD BE:
+StarRating.propTypes = {
+    maxRating: PropTypes.number,
 };
 
 export default function StarRating({
