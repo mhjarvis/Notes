@@ -11,6 +11,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             maxRating={5}
             messages={["terrible", "bad", "good", "poop", "poo"]}
         />
-        <StarRating maxRating={5}></StarRating>
+        <StarRating
+            size={24}
+            color="red"
+            className="test"
+            defaultRating={2}
+        ></StarRating>
     </React.StrictMode>
 );
