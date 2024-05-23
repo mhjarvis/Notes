@@ -1,5 +1,5 @@
 import { useState } from "react";
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"; // import for proptyping
 
 /* eslint-disable react/prop-types */
 const containerStyle = {
@@ -15,6 +15,12 @@ const starContainerStyle = {
 // USE PROPTYPING TO SPECIFY WHAT TYPE A PROP SHOULD BE:
 StarRating.propTypes = {
     maxRating: PropTypes.number,
+    defaultRating: PropTypes.number,
+    color: PropTypes.string,
+    size: PropTypes.number,
+    messages: PropTypes.array,
+    className: PropTypes.string,
+    onSetRating: PropTypes.func,
 };
 
 export default function StarRating({
