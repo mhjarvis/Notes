@@ -132,3 +132,39 @@ const mySong = {
 
 calculatePayout(mySong)
 ```
+
+TypeScript will allow optional properties in objects.
+
+```ts
+// OPTIONAL PROPERTIES
+type Point = {
+	x: number
+	y: number
+	z?: number // z is optional
+}
+```
+
+The `readonly` modifier can be used on properties that are not meant to be changed.
+
+```ts
+// READONLY PROPERTY
+type User = {
+	readonly id: number // this should never change
+	username: string
+}
+```
+
+Intersectional types allow you to combine two types.
+
+```ts
+// INTERSECTIONAL TYPE
+type Circle = {
+	radius: number
+}
+
+type Colorful = {
+	color: string
+}
+
+type ColorfulCircle = Circle & Colorful
+```
