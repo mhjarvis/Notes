@@ -106,4 +106,29 @@ type Point = {
 
 let coordinate: Point = {x 33, y:22}    // variable using alias
 function randomCoordinate(): Point {return ...}     // function using alias
+
+// NESTED OBJECT
+type Song = {
+	title: string,
+	artist: string,
+	numStreams: number,
+	credits: { producer: string; writer: string;
+	}
+}
+
+function calculatePayout(song: Song): {
+	song.numStreams * 0.0033
+}
+
+const mySong = {
+	title: 'Poop',
+	artist: 'Poopman',
+	numStreams: 134384,
+	credits: {
+		producer: 'some poop'
+		writer: 'another poop'
+	}
+}
+
+calculatePayout(mySong)
 ```
