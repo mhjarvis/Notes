@@ -79,3 +79,46 @@ console.log("'abcd', 'pq': ", mergeAlternately("abcd", "pq"))
 // X can be placed before L (50) and C (100) to make 40 and 90.
 // C can be placed before D (500) and M (1000) to make 400 and 900.
 // Given a roman numeral, convert it to an integer.
+
+// 4. IS SUBSEQUENCE
+
+// Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
+
+// A subsequence of a string is a new string that is formed from the original string by
+// deleting some (can be none) of the characters without disturbing the relative
+// positions of the remaining characters. (i.e., "ace" is a subsequence of "abcde" while
+// "aec" is not).
+
+const isSubsequence = function (s, t) {
+	if (t.length < s.length) {
+		return false
+	}
+
+	s = s.split("")
+	t = t.split("")
+
+	let p1 = 0
+	let p2 = 0
+
+	while (true) {
+		// test if subset is true
+		if (p1 === s.length) {
+			return true
+		}
+		if (p2 === t.length) {
+			return false
+		}
+
+		if (s[p1] === t[p2]) {
+			p1 += 1
+			p2 += 1
+		} else {
+			p2 += 1
+		}
+	}
+}
+
+console.log("/// IS SUBSEQUENCE ///")
+console.log("'abc', 'ahbgdc': ", isSubsequence("abc", "ahbgdc"))
+console.log("'axc', 'ahbgdc': ", isSubsequence("axc", "ahbgdc"))
+console.log("'abcd', 'pq': ", mergeAlternately("abcd", "pq"))
