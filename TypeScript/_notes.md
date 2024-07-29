@@ -168,3 +168,39 @@ type Colorful = {
 
 type ColorfulCircle = Circle & Colorful
 ```
+
+## Array Types
+
+Arrays can be typed using a type annotation followed by empty array brackets, like `number[]`, for an array of numbers. However, these arrays only allow data of that one type inside them.
+
+```ts
+// ARRAY TYPES
+let activeUsers: string[] = ["John", "Paul"]
+let salary: number[] = [45000, 55000, 233333]
+
+// ALTERNATE DECLARATION
+let names: Array<string> = ["hello", "world"]
+```
+
+TypeScript is not limited to primitivies when using arrays and you can declare your own custom types.
+
+```ts
+// CUSTOM ARRAY TYPES
+type Point = { x: number; y: number }
+
+const coordinates: Point[] = []
+coordinates.push({ x: 23, y: 34 })
+```
+
+Multidimensional Arrays.
+
+```ts
+// MULTIDIMENSIONAL ARRAYS
+const board: string[][] = [
+	["x", "o", "x"],
+	["x", "o", "x"],
+	["x", "o", "x"],
+]
+
+const demo: number[][][] = [[[1]]]
+```
